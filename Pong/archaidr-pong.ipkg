@@ -1,0 +1,8 @@
+package archaidr-pong
+
+depends = contrib
+
+sourcedir = "src"
+
+main = Main
+executable = pong

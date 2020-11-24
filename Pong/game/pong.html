@@ -1,0 +1,20 @@
+<html>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<script>
+var canvas;
+var canvasContext;
+var gameState;
+</script>
+<script type='text/javascript' src='pong.js'></script>
+<script>
+window.onload = function() {
+  canvas = document.getElementById('gameCanvas');
+  canvasContext = canvas.getContext('2d');
+  canvasContext.fillStyle = 'black';
+  canvasContext.fillRect(0,0,canvas.width,canvas.height);
+  console.log("Loading game logic...");
+  Main__main();
+  console.log("Loaded!");
+}
+</script>
+</html>
