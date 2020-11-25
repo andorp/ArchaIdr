@@ -1,5 +1,6 @@
 
 build: src
+	[ ! -e file ] || rm game/pong.js
 	idris2 --build archaidr-pong.ipkg --codegen javascript
 	cp build/exec/pong game/pong.js
 	sed -i '$$ d' game/pong.js
