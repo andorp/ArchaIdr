@@ -5,6 +5,15 @@ import Canvas
 import Window
 import GameLogic
 
+calculateMousePos : Event -> IO (Int, Int)
+calculateMousePos e = do
+  rect <- getBoundingClientRect
+  root <- documentElement
+  pure
+    ( !(clientX e) - !(left rect) - !(scrollLeft root)
+    , !(clientY e) - !(top  rect) - !(scrollTop  root)
+    )
+
 namespace GameLoop
 
   %foreign "browser:lambda:(s)=>{gameState=s;}"
@@ -19,27 +28,44 @@ namespace GameLoop
   getGameState : IO State
   getGameState = primIO prim__getGameState
 
-  updateGameState : ((1 _ : State) -> State) -> IO ()
+  updateGameState : (State -> State) -> IO ()
   updateGameState update = do
     s <- getGameState
     setGameState (update s)
 
-  drawGameState : ((1 _ : State) -> IO ()) -> IO ()
+  drawGameState : (State -> IO ()) -> IO ()
   drawGameState draw = do
     s <- getGameState
     draw s
 
   export
-  gameLoop : Int -> State -> ((1 _ : State) -> State) -> ((1 _ : State) -> IO ()) -> IO ()
-  gameLoop fps initState update draw = do
-    setGameState initState
+  gameLoop : Int -> IO State -> (State -> State) -> (State -> IO ()) -> IO ()
+  gameLoop fps mkInitState update draw = do
+    mkInitState >>= setGameState
     setInterval
       (do updateGameState update
           drawGameState draw)
       (1000 `div` fps)
 
+  export
+  registerHandler : String -> (Event -> IO (State -> State)) -> IO ()
+  registerHandler eventType handler = do
+    consoleLog "registerHandler"
+    addEventListener eventType $ do
+      e <- currentEvent eventType
+      u <- handler e
+      updateGameState u
 
+-- TODO: Use: https://github.com/rbarreiro/ifui/blob/663e9bc6ea59338cfdea56d3d5b2740a7bf73d84/Ifui/HtmlViews.idr
 main : IO ()
 main = do
   consoleLog "Starting..."
+  rect <- getBoundingClientRect
+  root <- documentElement
+  l <- left rect
+  r <- scrollLeft root
+  consoleLog $ show ("left", l, "right", r)
+  registerHandler "mousemove" $ \e => do
+    (_, y) <- calculateMousePos e
+    pure $ setPaddle1y y
   gameLoop 30 initBall moveBall drawBall

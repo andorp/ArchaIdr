@@ -4,6 +4,8 @@
 var canvas;
 var canvasContext;
 var gameState;
+
+var events = new Object();
 </script>
 <script type='text/javascript' src='pong.js'></script>
 <script>
@@ -12,6 +14,7 @@ window.onload = function() {
   canvasContext = canvas.getContext('2d');
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0,0,canvas.width,canvas.height);
+  lastEvt = undefined;
   console.log("Loading game logic...");
   Main__main();
   console.log("Loaded!");
