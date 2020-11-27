@@ -62,10 +62,10 @@ main = do
   consoleLog "Starting..."
   rect <- getBoundingClientRect
   root <- documentElement
-  l <- left rect
-  r <- scrollLeft root
-  consoleLog $ show ("left", l, "right", r)
   registerHandler "mousemove" $ \e => do
     (_, y) <- calculateMousePos e
     pure $ setPaddle1y y
+  registerHandler "mousedown" $ \e => do
+    -- Only restarts the game when somebody already won.
+    pure restartGame
   gameLoop 30 initBall moveBall drawBall

@@ -1,11 +1,18 @@
 module Canvas
 
-%foreign "browser:lambda:(s)=>canvasContext.fillStyle=s"
+%foreign "browser:lambda:((s)=>canvasContext.fillStyle=s)"
 prim__fillStyle : String -> PrimIO ()
 
 export
 fillStyle : String -> IO ()
 fillStyle s = primIO $ prim__fillStyle s
+
+%foreign "browser:lambda:((t,x,y)=>{canvasContext.fillText(t,Number(x),Number(y));})"
+prim__fillText : String -> Int -> Int -> PrimIO ()
+
+export
+fillText : String -> Int -> Int -> IO ()
+fillText t x y = primIO $ prim__fillText t x y
 
 %foreign "browser:lambda:(x,y,w,h)=>canvasContext.fillRect(Number(x),Number(y),Number(w),Number(h))"
 prim__fillRect : Int -> Int -> Int -> Int -> PrimIO ()
