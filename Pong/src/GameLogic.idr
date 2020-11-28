@@ -15,8 +15,8 @@ record Ball where
 
 record Velocity where
   constructor MkVelocity
-  DX : Int
-  DY : Int
+  dX : Int
+  dY : Int
 
 record Paddle where
   constructor MkPaddle
@@ -50,59 +50,30 @@ initBall = pure $ MkState
   False
 
 ballReset : State -> State
-ballReset (MkState w h _ (MkVelocity dx dy) p1 p2 s1 s2 sw)
-  = let matchWon = s1 >= WINNING_SCORE || s2 >= WINNING_SCORE
-    in MkState
-        w
-        h
-        (MkBall (w `div` 2) (h `div` 2))
-        (MkVelocity (-dx) 3)
-        p1
-        p2
-        s1
-        s2
-        matchWon
-
-changeXDirection : State -> State
--- changeXDirection s = record { Velocity.DX $= ((-1)*) } s
-changeXDirection (MkState w h b (MkVelocity dx dy) p1 p2 s1 s2 sw)
-                = MkState w h b (MkVelocity (-dx) dy) p1 p2 s1 s2 sw
-
-changeYDirection : State -> State
--- changeYDirection s = record { Velocity.DY $= ((-1)*) } s
-changeYDirection (MkState w h b (MkVelocity dx dy) p1 p2 s1 s2 sw)
-                = MkState w h b (MkVelocity dx (-dy)) p1 p2 s1 s2 sw
+ballReset s = record
+  { Ball->X = s.Width  `div` 2
+  , Ball->Y = s.Height `div` 2
+  , Velocity->dX $= negate
+  , Velocity->dY = 3
+  , ShowWin = (s.Score1 >= WINNING_SCORE || s.Score2 >= WINNING_SCORE)
+  } s
 
 rollBall : State -> State
-rollBall (MkState w h (MkBall x y) (MkVelocity dx dy) p1 p2 s1 s2 sw)
-        = MkState w h (MkBall (x + dx) (y + dy)) (MkVelocity dx dy) p1 p2 s1 s2 sw
-
-ballInPaddle1 : State -> Bool
-ballInPaddle1 s = s.Paddle1.Y < s.Ball.Y
-               && s.Ball.Y    < (s.Paddle1.Y + s.Paddle1.Height)
-
-ballInPaddle2 : State -> Bool
-ballInPaddle2 s = s.Paddle2.Y < s.Ball.Y
-               && s.Ball.Y    < (s.Paddle2.Y + s.Paddle2.Height)
+rollBall s = record
+  { Ball->X $= (+s.Velocity.dX)
+  , Ball->Y $= (+s.Velocity.dY)
+  } s
 
 computerMovement : State -> State
-computerMovement (MkState w h b@(MkBall x y) v p1 (MkPaddle py ph) s1 s2 sw)
-  = MkState w h b v p1 (MkPaddle py' ph) s1 s2 sw
+computerMovement s = record
+  { Paddle2->Y
+      =      if (cp < s.Ball.Y - (s.Paddle2.Height `div` 3)) then s.Paddle2.Y + 6
+        else if (cp > s.Ball.Y + (s.Paddle2.Height `div` 3)) then s.Paddle2.Y - 6
+        else s.Paddle2.Y
+  } s
   where
     cp : Int
-    cp = py + (ph `div` 2)
-    py' : Int
-    py' =      if (cp < y - (ph `div` 3)) then py + 6
-          else if (cp > y + (ph `div` 3)) then py - 6
-          else py
-
-changeBallVelPaddle1 : State -> State
-changeBallVelPaddle1 (MkState w h (MkBall x y) (MkVelocity dx dy) (MkPaddle py ph) p2 s1 s2 sw)
-  = MkState w h (MkBall x y) (MkVelocity dx ((y - (py + (ph `div` 2))) `div` 3)) (MkPaddle py ph) p2 s1 s2 sw
-
-changeBallVelPaddle2 : State -> State
-changeBallVelPaddle2 (MkState w h (MkBall x y) (MkVelocity dx dy) p1 (MkPaddle py ph) s1 s2 sw)
-  = MkState w h (MkBall x y) (MkVelocity dx ((y - (py + (ph `div` 2))) `div` 3)) p1 (MkPaddle py ph) s1 s2 sw
+    cp = s.Paddle2.Y + (s.Paddle2.Height `div` 2)
 
 bounceBall : State -> State
 bounceBall s =
@@ -117,6 +88,30 @@ bounceBall s =
                 then (changeBallVelPaddle1 (changeXDirection s))
                 else ballReset (record { Score2 $= (+1) } s))
   else s
+  where
+    ballInPaddle1 : State -> Bool
+    ballInPaddle1 s = s.Paddle1.Y < s.Ball.Y
+                   && s.Ball.Y    < (s.Paddle1.Y + s.Paddle1.Height)
+
+    ballInPaddle2 : State -> Bool
+    ballInPaddle2 s = s.Paddle2.Y < s.Ball.Y
+                   && s.Ball.Y    < (s.Paddle2.Y + s.Paddle2.Height)
+
+    changeXDirection : State -> State
+    changeXDirection = record { Velocity->dX $= negate }
+
+    changeYDirection : State -> State
+    changeYDirection = record { Velocity->dY $= negate }
+
+    changeBallVelPaddle1 : State -> State
+    changeBallVelPaddle1 s = record
+      { Velocity->dY = (s.Ball.Y - (s.Paddle1.Y + (s.Paddle1.Height `div` 2))) `div` 3
+      } s
+
+    changeBallVelPaddle2 : State -> State
+    changeBallVelPaddle2 s = record
+      { Velocity->dY = (s.Ball.Y - (s.Paddle2.Y + (s.Paddle2.Height `div` 2))) `div` 3
+      } s
 
 export
 -- moveBall : (1 _ : State) -> State
@@ -127,13 +122,11 @@ moveBall s
 
 export
 setPaddle1y : Int -> State -> State
-setPaddle1y y (MkState w h b v (MkPaddle _ ph) p2 s1 s2 sw)
-  = MkState w h b v (MkPaddle (y - (ph `div` 2)) ph) p2 s1 s2 sw
+setPaddle1y y s = record { Paddle1->Y = y - (s.Paddle1.Height `div` 2) } s
 
 export
 setPaddle2y : Int -> State -> State
-setPaddle2y y (MkState w h b v p1 (MkPaddle _ ph) s1 s2 sw)
-  = MkState w h b v p1 (MkPaddle (y - (ph `div` 2)) ph) s1 s2 sw
+setPaddle2y y s = record { Paddle2->Y = y - (s.Paddle2.Height `div` 2) } s
 
 export
 restartGame : State -> State
