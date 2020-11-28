@@ -1,23 +1,2595 @@
 <html>
-<canvas id="gameCanvas" width="800" height="600"></canvas>
-<script>
-var canvas;
-var canvasContext;
-var gameState;
+ <head>
+  <meta charset='utf-8'>
+ </head>
+ <body>
+  <script type='text/javascript'>
+class IdrisError extends Error { }
+function __prim_js2idris_array(x){if(x.length ===0){return {h:0}}else{return {h:1,a1:x[0],a2: __prim_js2idris_array(x.slice(1))}}}
+function __prim_idris2js_array(x){const result = Array();while (x.h != 0) {result.push(x.a1); x = x.a2;}return result;}
+const __esPrim_crashExp = (x=>{throw new IdrisError(x)});
+const __esPrim_idrisworld = (Symbol('idrisworld'));
+const __esPrim_int_bound_63 = (BigInt(2) ** BigInt(63) );
 
-var events = new Object();
-</script>
-<script type='text/javascript' src='pong.js'></script>
-<script>
-window.onload = function() {
-  canvas = document.getElementById('gameCanvas');
-  canvasContext = canvas.getContext('2d');
-  canvasContext.fillStyle = 'black';
-  canvasContext.fillRect(0,0,canvas.width,canvas.height);
-  lastEvt = undefined;
-  console.log("Loading game logic...");
-  Main__main();
-  console.log("Loaded!");
+function Main_restartGameOnClick(arg_0, arg_1, ext_0, ext_1){//src/Main.idr:22:1--23:19
+ return GameLogic_restartGame(ext_1);
 }
-</script>
+
+function Main_movePaddle1(arg_0, arg_1, ext_0){//src/Main.idr:17:1--18:12
+ const imp$5fgen_1 = Main_calculateMousePos(arg_0, arg_1, ext_0);
+ let imp$5fgen_0;
+ switch(imp$5fgen_1.h){
+  case 0: {
+   imp$5fgen_0 = (eta_0) => {return GameLogic_setPaddle1y(imp$5fgen_1.a2, eta_0);};
+   break; }
+  default:
+   throw new Error('unhandled con case on src/Main.idr:8:47--8:57');
+ }
+ return imp$5fgen_0;
+}
+
+function Main_main(ext_0){//src/Main.idr:26:1--27:5
+ Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_3 = arg_483(eta_0);
+const imp$5fgen_2 = arg_485(eta_0);
+return imp$5fgen_3(imp$5fgen_2);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_4 = arg_644(eta_0);
+return arg_645(imp$5fgen_4)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_5 = arg_647(eta_0);
+return imp$5fgen_5(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'Staring...')(ext_0);
+ const imp$5fgen_46 = Dom_createElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_7 = arg_483(eta_0);
+const imp$5fgen_6 = arg_485(eta_0);
+return imp$5fgen_7(imp$5fgen_6);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_8 = arg_644(eta_0);
+return arg_645(imp$5fgen_8)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_9 = arg_647(eta_0);
+return imp$5fgen_9(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'canvas')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_11 = arg_483(eta_0);
+const imp$5fgen_10 = arg_485(eta_0);
+return imp$5fgen_11(imp$5fgen_10);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_12 = arg_644(eta_0);
+return arg_645(imp$5fgen_12)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_13 = arg_647(eta_0);
+return imp$5fgen_13(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_46, 'id', 'gameCanvas')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_15 = arg_483(eta_0);
+const imp$5fgen_14 = arg_485(eta_0);
+return imp$5fgen_15(imp$5fgen_14);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_16 = arg_644(eta_0);
+return arg_645(imp$5fgen_16)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_17 = arg_647(eta_0);
+return imp$5fgen_17(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_46, 'width', '800')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_19 = arg_483(eta_0);
+const imp$5fgen_18 = arg_485(eta_0);
+return imp$5fgen_19(imp$5fgen_18);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_20 = arg_644(eta_0);
+return arg_645(imp$5fgen_20)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_21 = arg_647(eta_0);
+return imp$5fgen_21(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_46, 'height', '600')(ext_0);
+ const imp$5fgen_30 = Dom_body(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_23 = arg_483(eta_0);
+const imp$5fgen_22 = arg_485(eta_0);
+return imp$5fgen_23(imp$5fgen_22);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_24 = arg_644(eta_0);
+return arg_645(imp$5fgen_24)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_25 = arg_647(eta_0);
+return imp$5fgen_25(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}))(ext_0);
+ Dom_appendChild(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_27 = arg_483(eta_0);
+const imp$5fgen_26 = arg_485(eta_0);
+return imp$5fgen_27(imp$5fgen_26);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_28 = arg_644(eta_0);
+return arg_645(imp$5fgen_28)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_29 = arg_647(eta_0);
+return imp$5fgen_29(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_30, imp$5fgen_46)(ext_0);
+ const imp$5fgen_40 = Dom_width(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_32 = arg_483(eta_0);
+const imp$5fgen_31 = arg_485(eta_0);
+return imp$5fgen_32(imp$5fgen_31);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_33 = arg_644(eta_0);
+return arg_645(imp$5fgen_33)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_34 = arg_647(eta_0);
+return imp$5fgen_34(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_46)(ext_0);
+ const imp$5fgen_39 = Dom_height(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_36 = arg_483(eta_0);
+const imp$5fgen_35 = arg_485(eta_0);
+return imp$5fgen_36(imp$5fgen_35);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_37 = arg_644(eta_0);
+return arg_645(imp$5fgen_37)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_38 = arg_647(eta_0);
+return imp$5fgen_38(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_46)(ext_0);
+ const imp$5fgen_45 = GameLoop_createGameContext(({h:'GameLogic.State'}), imp$5fgen_46, 30n, (eta_0) => {return GameLogic_initBall(imp$5fgen_40, imp$5fgen_39, eta_0);}, ext_0);
+ GameLoop_registerHandler(({h:'GameLogic.State'}), imp$5fgen_45, 'mousemove', (eta_0) => {return (eta_1) => {return (eta_2) => {return Main_movePaddle1(eta_0, eta_1, eta_2);};};})(ext_0);
+ GameLoop_registerHandler(({h:'GameLogic.State'}), imp$5fgen_45, 'mousedown', (eta_0) => {return (eta_1) => {return (eta_2) => {return (eta_3) => {return Main_restartGameOnClick(eta_0, eta_1, eta_2, eta_3);};};};})(ext_0);
+ GameLoop_gameLoop(({h:'GameLogic.State'}), imp$5fgen_45, (eta_0) => {return GameLogic_moveBall(eta_0);}, (eta_0) => {return (eta_1) => {return (eta_2) => {return GameLogic_Graphics_drawBall(eta_0, eta_1, eta_2);};};})(ext_0);
+ return Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_42 = arg_483(eta_0);
+const imp$5fgen_41 = arg_485(eta_0);
+return imp$5fgen_42(imp$5fgen_41);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_43 = arg_644(eta_0);
+return arg_645(imp$5fgen_43)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_44 = arg_647(eta_0);
+return imp$5fgen_44(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'Done.')(ext_0);
+}
+
+function Main_calculateMousePos(arg_0, arg_1, ext_0){//src/Main.idr:8:1--9:18
+ const imp$5fgen_86 = Dom_getBoundingClientRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_48 = arg_483(eta_0);
+const imp$5fgen_47 = arg_485(eta_0);
+return imp$5fgen_48(imp$5fgen_47);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_49 = arg_644(eta_0);
+return arg_645(imp$5fgen_49)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_50 = arg_647(eta_0);
+return imp$5fgen_50(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0)(ext_0);
+ const imp$5fgen_85 = Dom_documentElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_52 = arg_483(eta_0);
+const imp$5fgen_51 = arg_485(eta_0);
+return imp$5fgen_52(imp$5fgen_51);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_53 = arg_644(eta_0);
+return arg_645(imp$5fgen_53)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_54 = arg_647(eta_0);
+return imp$5fgen_54(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}))(ext_0);
+ const imp$5fgen_84 = Dom_clientX(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_56 = arg_483(eta_0);
+const imp$5fgen_55 = arg_485(eta_0);
+return imp$5fgen_56(imp$5fgen_55);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_57 = arg_644(eta_0);
+return arg_645(imp$5fgen_57)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_58 = arg_647(eta_0);
+return imp$5fgen_58(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1)(ext_0);
+ const imp$5fgen_83 = Dom_left(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_60 = arg_483(eta_0);
+const imp$5fgen_59 = arg_485(eta_0);
+return imp$5fgen_60(imp$5fgen_59);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_61 = arg_644(eta_0);
+return arg_645(imp$5fgen_61)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_62 = arg_647(eta_0);
+return imp$5fgen_62(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_86)(ext_0);
+ const imp$5fgen_82 = Dom_scrollLeft(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_64 = arg_483(eta_0);
+const imp$5fgen_63 = arg_485(eta_0);
+return imp$5fgen_64(imp$5fgen_63);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_65 = arg_644(eta_0);
+return arg_645(imp$5fgen_65)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_66 = arg_647(eta_0);
+return imp$5fgen_66(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_85)(ext_0);
+ const imp$5fgen_81 = Dom_clientY(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_68 = arg_483(eta_0);
+const imp$5fgen_67 = arg_485(eta_0);
+return imp$5fgen_68(imp$5fgen_67);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_69 = arg_644(eta_0);
+return arg_645(imp$5fgen_69)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_70 = arg_647(eta_0);
+return imp$5fgen_70(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1)(ext_0);
+ const imp$5fgen_80 = Dom_top(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_72 = arg_483(eta_0);
+const imp$5fgen_71 = arg_485(eta_0);
+return imp$5fgen_72(imp$5fgen_71);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_73 = arg_644(eta_0);
+return arg_645(imp$5fgen_73)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_74 = arg_647(eta_0);
+return imp$5fgen_74(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_86)(ext_0);
+ const imp$5fgen_79 = Dom_scrollTop(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_76 = arg_483(eta_0);
+const imp$5fgen_75 = arg_485(eta_0);
+return imp$5fgen_76(imp$5fgen_75);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_77 = arg_644(eta_0);
+return arg_645(imp$5fgen_77)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_78 = arg_647(eta_0);
+return imp$5fgen_78(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_85)(ext_0);
+ return ({h:0, a1: Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_84, imp$5fgen_83), imp$5fgen_82), a2: Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_81, imp$5fgen_80), imp$5fgen_79)});
+}
+
+function GameLoop_registerHandler(arg_0, arg_1, arg_2, arg_3){//src/GameLoop.idr:30:3--32:18
+ let imp$5fgen_91;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_91 = arg_1.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+ }
+ return Dom_addEventListener(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_88 = arg_483(eta_0);
+const imp$5fgen_87 = arg_485(eta_0);
+return imp$5fgen_88(imp$5fgen_87);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_89 = arg_644(eta_0);
+return arg_645(imp$5fgen_89)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_90 = arg_647(eta_0);
+return imp$5fgen_90(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_2, imp$5fgen_91, (e) => {return (eta_0) => {let imp$5fgen_92;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_92 = arg_1.a2;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+const imp$5fgen_96 = arg_3(imp$5fgen_92)(e)(eta_0);
+let imp$5fgen_93;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_93 = arg_1.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+const imp$5fgen_95 = (imp$5fgen_93.value);
+let imp$5fgen_94;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_94 = arg_1.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+return (imp$5fgen_94.value=imp$5fgen_96(imp$5fgen_95));};});
+}
+
+function GameLoop_gameLoop(arg_0, arg_1, arg_2, arg_3){//src/GameLoop.idr:20:3--22:11
+ let imp$5fgen_106;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_106 = arg_1.a4;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+ }
+ return Dom_setInterval(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_98 = arg_483(eta_0);
+const imp$5fgen_97 = arg_485(eta_0);
+return imp$5fgen_98(imp$5fgen_97);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_99 = arg_644(eta_0);
+return arg_645(imp$5fgen_99)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_100 = arg_647(eta_0);
+return imp$5fgen_100(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), (eta_0) => {let imp$5fgen_101;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_101 = arg_1.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+const imp$5fgen_105 = (imp$5fgen_101.value);
+const imp$5fgen_104 = arg_2(imp$5fgen_105);
+let imp$5fgen_102;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_102 = arg_1.a3;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+arg_3(imp$5fgen_102)(imp$5fgen_104)(eta_0);
+let imp$5fgen_103;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_103 = arg_1.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+}
+return (imp$5fgen_103.value=imp$5fgen_104);}, Prelude_Num_div$5fIntegral$5f$5fInt((1000n % __esPrim_int_bound_63), imp$5fgen_106));
+}
+
+function GameLoop_createGameContext(arg_0, arg_1, arg_2, arg_3, ext_0){//src/GameLoop.idr:16:3--18:20
+ const imp$5fgen_117 = Dom_getContext(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_108 = arg_483(eta_0);
+const imp$5fgen_107 = arg_485(eta_0);
+return imp$5fgen_108(imp$5fgen_107);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_109 = arg_644(eta_0);
+return arg_645(imp$5fgen_109)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_110 = arg_647(eta_0);
+return imp$5fgen_110(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1, '2d')(ext_0);
+ const imp$5fgen_115 = arg_3(ext_0);
+ const imp$5fgen_116 = Data_IORef_newIORef(undefined, undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_112 = arg_483(eta_0);
+const imp$5fgen_111 = arg_485(eta_0);
+return imp$5fgen_112(imp$5fgen_111);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_113 = arg_644(eta_0);
+return arg_645(imp$5fgen_113)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_114 = arg_647(eta_0);
+return imp$5fgen_114(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_115)(ext_0);
+ return ({h:0, a1: arg_0, a2: arg_1, a3: imp$5fgen_117, a4: arg_2, a5: imp$5fgen_116});
+}
+
+function Data_IORef_newIORef(arg_0, arg_1, arg_2, arg_3){//Data/IORef.idr:15:1--17:9
+ let imp$5fgen_118;
+ switch(arg_2.h){
+  case 0: {
+   imp$5fgen_118 = arg_2.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ switch(imp$5fgen_118.h){
+  case 0: {
+   let imp$5fgen_119;
+   switch(arg_2.h){
+    case 0: {
+     imp$5fgen_119 = arg_2.a2(undefined)((eta_0) => {return ({value: arg_3});});
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+   }
+   return imp$5fgen_118.a2(undefined)(undefined)(imp$5fgen_119)((m) => {let imp$5fgen_120;
+switch(arg_2.h){
+ case 0: {
+  imp$5fgen_120 = arg_2.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+}
+let imp$5fgen_121;
+switch(imp$5fgen_120.h){
+ case 0: {
+  imp$5fgen_121 = imp$5fgen_120.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+}
+switch(imp$5fgen_121.h){
+ case 0: {
+  return imp$5fgen_121.a2(undefined)(m);
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Interfaces.idr:145:3--145:18');
+}});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:168:3--168:35');
+ }
+}
+
+function Prelude_Basics_$7c$7c(arg_0, arg_1){//Prelude/Basics.idr:104:1--107:2
+ switch(arg_0){
+  case 0n: {
+   return 0n;
+   break; }
+  case 1n: {
+   return arg_1();
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/Basics.idr:106:15--106:19');
+ }
+}
+
+function Prelude_Basics_not(arg_0){//Prelude/Basics.idr:92:1--95:4
+ switch(arg_0){
+  case 0n: {
+   return 1n;
+   break; }
+  case 1n: {
+   return 0n;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/Basics.idr:94:14--94:18');
+ }
+}
+
+function Prelude_Basics_$26$26(arg_0, arg_1){//Prelude/Basics.idr:98:1--101:2
+ switch(arg_0){
+  case 0n: {
+   return arg_1();
+   break; }
+  case 1n: {
+   return 1n;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/Basics.idr:100:15--100:19');
+ }
+}
+
+function Builtin_snd(arg_0, arg_1, arg_2){//Builtin.idr:62:1--65:4
+ switch(arg_2.h){
+  case 0: {
+   return arg_2.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on Builtin.idr:64:26--64:32');
+ }
+}
+
+function Builtin_idris$5fcrash(arg_0, ext_0){//Builtin.idr:175:1--177:12
+ return __esPrim_crashExp(ext_0);
+}
+
+function Builtin_fst(arg_0, arg_1, arg_2){//Builtin.idr:57:1--60:4
+ switch(arg_2.h){
+  case 0: {
+   return arg_2.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Builtin.idr:59:26--59:32');
+ }
+}
+
+function Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:938:17--940:28
+ switch(arg_4){
+  case 0n: {
+   return Prelude_Types_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+ case 0: {
+  return Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a5(arg_5)(arg_2);
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/EqOrd.idr:97:3--97:26');
+}}, Prelude_Types_countFrom(undefined, arg_3, (x) => {switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+ case 0: {
+  let imp$5fgen_122;
+  switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+   case 0: {
+    imp$5fgen_122 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
+    break; }
+   default:
+    throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+  }
+  let imp$5fgen_123;
+  switch(imp$5fgen_122.h){
+   case 0: {
+    imp$5fgen_123 = imp$5fgen_122.a3(1n);
+    break; }
+   default:
+    throw new Error('unhandled con case on Prelude/Num.idr:22:3--22:30');
+  }
+  return Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a3(x)(imp$5fgen_123);
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Num.idr:31:3--31:23');
+}}));
+   break; }
+  case 1n: {
+   return ({h:1, a1: arg_3, a2: ({h:0})});
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function Prelude_Types_case__rangeFromTo_5209(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:936:9--941:18
+ switch(arg_4){
+  case 0n: {
+   return Prelude_Types_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+ case 0: {
+  return Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a6(arg_5)(arg_3);
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/EqOrd.idr:100:3--100:26');
+}}, Prelude_Types_countFrom(undefined, arg_2, (arg_5) => {let imp$5fgen_124;
+switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+ case 0: {
+  imp$5fgen_124 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+}
+switch(imp$5fgen_124.h){
+ case 0: {
+  let imp$5fgen_125;
+  switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+   case 0: {
+    imp$5fgen_125 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
+    break; }
+   default:
+    throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+  }
+  let imp$5fgen_126;
+  switch(imp$5fgen_125.h){
+   case 0: {
+    imp$5fgen_126 = imp$5fgen_125.a3(1n);
+    break; }
+   default:
+    throw new Error('unhandled con case on Prelude/Num.idr:22:3--22:30');
+  }
+  return imp$5fgen_124.a1(arg_5)(imp$5fgen_126);
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Num.idr:19:3--19:23');
+}}));
+   break; }
+  case 1n: {
+   let imp$5fgen_127;
+   switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+    case 0: {
+     imp$5fgen_127 = Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a4(arg_2)(arg_3);
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/EqOrd.idr:94:3--94:25');
+   }
+   return Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(undefined, arg_1, arg_3, arg_2, imp$5fgen_127);
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function Prelude_Types_case__takeUntil_4755(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:890:7--892:34
+ switch(arg_4){
+  case 0n: {
+   return ({h:1, a1: arg_1, a2: ({h:0})});
+   break; }
+  case 1n: {
+   return ({h:1, a1: arg_1, a2: Prelude_Types_takeUntil(undefined, arg_3, arg_2())});
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/Types.idr:888:19--888:23');
+ }
+}
+
+function Prelude_Types_rangeFromTo$5fRange$5f$5f$24a(arg_0, arg_1, arg_2, arg_3){//Prelude/Types.idr:933:1--956:1
+ let imp$5fgen_128;
+ switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+  case 0: {
+   imp$5fgen_128 = Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a4(arg_3)(arg_2);
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/EqOrd.idr:94:3--94:25');
+ }
+ return Prelude_Types_case__rangeFromTo_5209(undefined, arg_1, arg_2, arg_3, imp$5fgen_128);
+}
+
+function Prelude_Types_foldr$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:323:1--331:7
+ switch(arg_4.h){
+  case 0: {
+   return arg_3;
+   break; }
+  case 1: {
+   return arg_2(arg_4.a1)(Prelude_Types_foldr$5fFoldable$5f$5fList(undefined, undefined, arg_2, arg_3, arg_4.a2));
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:210:67--210:73');
+ }
+}
+
+function Prelude_Types_foldl$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:323:1--331:7
+ function tailRecOptimStep_0(tailRecOptimArgs_0){//:1:1--1:1
+  switch(tailRecOptimArgs_0.a5.h){
+   case 0: {
+    return ({h:1, a1: tailRecOptimArgs_0.a4});
+    break; }
+   case 1: {
+    return ({h:0, a1: undefined, a2: undefined, a3: tailRecOptimArgs_0.a3, a4: tailRecOptimArgs_0.a3(tailRecOptimArgs_0.a4)(tailRecOptimArgs_0.a5.a1), a5: tailRecOptimArgs_0.a5.a2});
+    break; }
+   default:
+    throw new Error('unhandled con case on Prelude/Interfaces.idr:217:67--217:73');
+  }
+ }
+
+ let tailRecOptimArgs_0 = ({h:0, a1: arg_0, a2: arg_1, a3: arg_2, a4: arg_3, a5: arg_4});
+ while(true){
+  switch(tailRecOptimArgs_0.h){
+   case 0: {
+    tailRecOptimArgs_0 = tailRecOptimStep_0(tailRecOptimArgs_0);
+    break; }
+   default:
+    return tailRecOptimArgs_0.a1;
+  }
+ }
+}
+
+function Prelude_Types_compare$5fOrd$5f$5fNat(arg_0, arg_1){//Prelude/Types.idr:70:1--77:7
+ switch(arg_0){
+  case 0n: {
+   let imp$5fgen_129;
+   switch(arg_1){
+    case 0n: {
+     imp$5fgen_129 = 1n;
+     break; }
+    default:
+     imp$5fgen_129 = 0n;
+   }
+   return imp$5fgen_129;
+   break; }
+  default:
+   const imp$5fgen_132 = (arg_0 - 1n);
+   let imp$5fgen_130;
+   switch(arg_1){
+    case 0n: {
+     imp$5fgen_130 = 2n;
+     break; }
+    default:
+     const imp$5fgen_131 = (arg_1 - 1n);
+     imp$5fgen_130 = Prelude_Types_compare$5fOrd$5f$5fNat(imp$5fgen_132, imp$5fgen_131);
+   }
+   return imp$5fgen_130;
+ }
+}
+
+function Prelude_Types_takeUntil(arg_0, arg_1, arg_2){//Prelude/Types.idr:887:1--889:10
+ switch(arg_2.h){
+  case 0: {
+   return Prelude_Types_case__takeUntil_4755(undefined, arg_2.a1, arg_2.a2, arg_1, arg_1(arg_2.a1));
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Types.idr:888:28--888:36');
+ }
+}
+
+function Prelude_Types_countFrom(arg_0, arg_1, arg_2){//Prelude/Types.idr:881:1--883:10
+ return ({h:0, a1: arg_1, a2: (()=>Prelude_Types_countFrom(undefined, arg_2(arg_1), arg_2))});
+}
+
+function Prelude_Types_Strings_$2b$2b(arg_0, arg_1){//Prelude/Types.idr:393:3--395:4
+ return (arg_0 + arg_1);
+}
+
+function Prelude_Num_case__mod_459(arg_0, arg_1, arg_2){//Prelude/Num.idr:117:9--122:8
+ switch(arg_2){
+  case 1n: {
+   return ((arg_1 % arg_0) % __esPrim_int_bound_63);
+   break; }
+  default:
+   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in mod at Prelude/Num.idr:116:3--122:8');
+ }
+}
+
+function Prelude_Num_case__div_440(arg_0, arg_1, arg_2){//Prelude/Num.idr:114:9--116:6
+ switch(arg_2){
+  case 1n: {
+   return ((arg_1 / arg_0) % __esPrim_int_bound_63);
+   break; }
+  default:
+   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in div at Prelude/Num.idr:113:3--116:6');
+ }
+}
+
+function Prelude_Num_negate$5fNeg$5f$5fInt(arg_0){//Prelude/Num.idr:102:1--107:7
+ return ((0n - arg_0) % __esPrim_int_bound_63);
+}
+
+function Prelude_Num_mod$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--122:8
+ return Prelude_Num_case__mod_459(arg_1, arg_0, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
+}
+
+function Prelude_Num_div$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--122:8
+ return Prelude_Num_case__div_440(arg_1, arg_0, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
+}
+
+function Prelude_Num_$2d$5fNeg$5f$5fInt(ext_0, ext_1){//Prelude/Num.idr:102:1--107:7
+ return ((ext_0 - ext_1) % __esPrim_int_bound_63);
+}
+
+function Prelude_Num_$2a$5fNum$5f$5fDouble(ext_0, ext_1){//Prelude/Num.idr:158:1--164:7
+ return (ext_0 * ext_1);
+}
+
+function Prelude_EqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:39--139:64
+ switch(arg_2){
+  case 0n: {
+   return 1n;
+   break; }
+  case 1n: {
+   return 2n;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:16:22--16:26');
+ }
+}
+
+function Prelude_EqOrd_case__compare_1284(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:17--141:4
+ switch(arg_2){
+  case 0n: {
+   return 0n;
+   break; }
+  case 1n: {
+   return Prelude_EqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInteger(arg_1, arg_0));
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:91:21--91:25');
+ }
+}
+
+function Prelude_EqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:39--130:64
+ switch(arg_2){
+  case 0n: {
+   return 1n;
+   break; }
+  case 1n: {
+   return 2n;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:16:22--16:26');
+ }
+}
+
+function Prelude_EqOrd_case__compare_1170(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:17--132:4
+ switch(arg_2){
+  case 0n: {
+   return 0n;
+   break; }
+  case 1n: {
+   return Prelude_EqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, arg_0));
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:91:21--91:25');
+ }
+}
+
+function Prelude_EqOrd_case__max_1153(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--137:7
+ switch(arg_2){
+  case 0n: {
+   return arg_1;
+   break; }
+  case 1n: {
+   return arg_0;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:94:21--94:25');
+ }
+}
+
+function Prelude_EqOrd_case__min_1139(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--137:7
+ switch(arg_2){
+  case 0n: {
+   return arg_1;
+   break; }
+  case 1n: {
+   return arg_0;
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/EqOrd.idr:91:21--91:25');
+ }
+}
+
+function Prelude_EqOrd_min$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ return Prelude_EqOrd_case__min_1139(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
+}
+
+function Prelude_EqOrd_max$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ return Prelude_EqOrd_case__max_1153(arg_1, arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1));
+}
+
+function Prelude_EqOrd_compare$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--146:7
+ return Prelude_EqOrd_case__compare_1284(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1));
+}
+
+function Prelude_EqOrd_compare$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ return Prelude_EqOrd_case__compare_1170(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
+}
+
+function Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ switch(((arg_0 > arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ switch(((arg_0 >= arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--86:75
+ switch(arg_0){
+  case 0n: {
+   let imp$5fgen_133;
+   switch(arg_1){
+    case 0n: {
+     imp$5fgen_133 = 0n;
+     break; }
+    default:
+     imp$5fgen_133 = 1n;
+   }
+   return imp$5fgen_133;
+   break; }
+  case 1n: {
+   let imp$5fgen_134;
+   switch(arg_1){
+    case 1n: {
+     imp$5fgen_134 = 0n;
+     break; }
+    default:
+     imp$5fgen_134 = 1n;
+   }
+   return imp$5fgen_134;
+   break; }
+  case 2n: {
+   let imp$5fgen_135;
+   switch(arg_1){
+    case 2n: {
+     imp$5fgen_135 = 0n;
+     break; }
+    default:
+     imp$5fgen_135 = 1n;
+   }
+   return imp$5fgen_135;
+   break; }
+  default:
+   return 1n;
+ }
+}
+
+function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:40:1--44:7
+ switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--40:7
+ switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3d$3d$5fEq$5f$5fChar(arg_0, arg_1){//Prelude/EqOrd.idr:64:1--68:7
+ switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--146:7
+ switch(((arg_0 < arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ switch(((arg_0 < arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$3c$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+ switch(((arg_0 <= arg_1) ? BigInt(1) : BigInt(0))){
+  case 0n: {
+   return 1n;
+   break; }
+  default:
+   return 0n;
+ }
+}
+
+function Prelude_EqOrd_$2f$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--86:75
+ return Prelude_Basics_not(Prelude_EqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1));
+}
+
+function Prelude_EqOrd_$2f$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--40:7
+ return Prelude_Basics_not(Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1));
+}
+
+function Prelude_Interfaces_traverse$5f(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:285:1--289:10
+ switch(Builtin_fst(undefined, undefined, arg_4).h){
+  case 0: {
+   return (arg_6) => {let imp$5fgen_136;
+switch(Builtin_snd(undefined, undefined, arg_4).h){
+ case 0: {
+  imp$5fgen_136 = Builtin_snd(undefined, undefined, arg_4).a2(undefined)(({h:0}));
+  break; }
+ default:
+  throw new Error('unhandled con case on Prelude/Interfaces.idr:145:3--145:18');
+}
+return Builtin_fst(undefined, undefined, arg_4).a1(undefined)(undefined)((eta_0) => {return (eta_1) => {return Prelude_Interfaces_$2a$3e(undefined, undefined, undefined, Builtin_snd(undefined, undefined, arg_4), arg_5(eta_0), eta_1);};})(imp$5fgen_136)(arg_6);};
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:210:3--210:81');
+ }
+}
+
+function Prelude_Interfaces_$3c$24$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:85:1--91:2
+ return arg_3(undefined)(undefined)(arg_4)(arg_5);
+}
+
+function Prelude_Interfaces_$2a$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:152:1--154:2
+ switch(arg_3.h){
+  case 0: {
+   let imp$5fgen_137;
+   switch(arg_3.h){
+    case 0: {
+     imp$5fgen_137 = arg_3.a1(undefined)(undefined)((eta_0) => {return (eta_1) => {return eta_1;};})(arg_4);
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+   }
+   return arg_3.a3(undefined)(undefined)(imp$5fgen_137)(arg_5);
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:146:3--146:35');
+ }
+}
+
+function PrimIO_case__unsafePerformIO_442(arg_0, arg_1, arg_2, arg_3){//PrimIO.idr:103:32--104:76
+ return PrimIO_unsafeDestroyWorld(undefined, undefined, arg_3);
+}
+
+function PrimIO_unsafePerformIO(arg_0, arg_1){//PrimIO.idr:100:1--102:16
+ return PrimIO_unsafeCreateWorld(undefined, (w) => {return PrimIO_case__unsafePerformIO_442(undefined, undefined, undefined, arg_1(w));});
+}
+
+function PrimIO_unsafeDestroyWorld(arg_0, arg_1, arg_2){//PrimIO.idr:97:1--98:19
+ return arg_2;
+}
+
+function PrimIO_unsafeCreateWorld(arg_0, arg_1){//PrimIO.idr:94:1--95:18
+ return arg_1(__esPrim_idrisworld);
+}
+
+function Prelude_Show_show$5fShow$5f$5fInt(arg_0){//Prelude/Show.idr:102:1--106:7
+ return Prelude_Show_showPrec$5fShow$5f$5fInt(({h:0}), arg_0);
+}
+
+function Prelude_Show_showPrec$5fShow$5f$5fInt(ext_0, ext_1){//Prelude/Show.idr:102:1--106:7
+ return Prelude_Show_primNumShow(undefined, (eta_0) => {return (''+eta_0);}, ext_0, ext_1);
+}
+
+function Prelude_Show_compare$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--41:58
+ switch(arg_0.h){
+  case 4: {
+   let imp$5fgen_138;
+   switch(arg_1.h){
+    case 4: {
+     imp$5fgen_138 = Prelude_Types_compare$5fOrd$5f$5fNat(arg_0.a1, arg_1.a1);
+     break; }
+    default:
+     imp$5fgen_138 = Prelude_EqOrd_compare$5fOrd$5f$5fInteger(Prelude_Show_precCon(arg_0), Prelude_Show_precCon(arg_1));
+   }
+   return imp$5fgen_138;
+   break; }
+  default:
+   return Prelude_EqOrd_compare$5fOrd$5f$5fInteger(Prelude_Show_precCon(arg_0), Prelude_Show_precCon(arg_1));
+ }
+}
+
+function Prelude_Show_$3e$3d$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--41:58
+ return Prelude_EqOrd_$2f$3d$5fEq$5f$5fOrdering(Prelude_Show_compare$5fOrd$5f$5fPrec(arg_0, arg_1), 0n);
+}
+
+function Prelude_Show_showParens(arg_0, arg_1){//Prelude/Show.idr:64:1--68:11
+ switch(arg_0){
+  case 1n: {
+   return arg_1;
+   break; }
+  case 0n: {
+   return Prelude_Types_Strings_$2b$2b('(', Prelude_Types_Strings_$2b$2b(arg_1, ')'));
+   break; }
+  default:
+   throw new Error('unhandled const case on Prelude/Show.idr:67:21--67:25');
+ }
+}
+
+function Prelude_Show_primNumShow(arg_0, arg_1, arg_2, arg_3){//Prelude/Show.idr:99:1--100:12
+ const imp$5fgen_139 = arg_1(arg_3);
+ return Prelude_Show_showParens(Prelude_Basics_$26$26(Prelude_Show_$3e$3d$5fOrd$5f$5fPrec(arg_2, ({h:5})), (()=>Prelude_Show_firstCharIs((arg_4) => {return Prelude_EqOrd_$3d$3d$5fEq$5f$5fChar(arg_4, '-');}, imp$5fgen_139))), imp$5fgen_139);
+}
+
+function Prelude_Show_precCon(arg_0){//Prelude/Show.idr:19:1--23:8
+ switch(arg_0.h){
+  case 0: {
+   return 0n;
+   break; }
+  case 1: {
+   return 1n;
+   break; }
+  case 2: {
+   return 2n;
+   break; }
+  case 3: {
+   return 3n;
+   break; }
+  case 4: {
+   return 4n;
+   break; }
+  case 5: {
+   return 5n;
+   break; }
+  case 6: {
+   return 6n;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Show.idr:22:11--22:15');
+ }
+}
+
+function Prelude_Show_firstCharIs(arg_0, arg_1){//Prelude/Show.idr:95:1--96:12
+ switch(arg_1){
+  case '': {
+   return 1n;
+   break; }
+  default:
+   return arg_0((arg_1.charAt(0)));
+ }
+}
+
+function Prelude_IO_map$5fFunctor$5f$5fIO(arg_0, arg_1, arg_2, arg_3, ext_0){//Prelude/IO.idr:15:1--19:8
+ const imp$5fgen_140 = arg_3(ext_0);
+ return arg_2(imp$5fgen_140);
+}
+
+function Dom_width(arg_0, arg_1, arg_2){//src/Dom.idr:94:1--96:6
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fwidth(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_top(arg_0, arg_1, arg_2){//src/Dom.idr:133:1--135:4
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5ftop(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_setInterval(arg_0, arg_1, arg_2, arg_3){//src/Dom.idr:157:1--159:12
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fsetInterval(arg_2, arg_3, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_setAttribute(arg_0, arg_1, arg_2, arg_3, arg_4){//src/Dom.idr:35:1--37:13
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fsetAttribute(arg_2, arg_3, arg_4, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_scrollTop(arg_0, arg_1, arg_2){//src/Dom.idr:151:1--153:10
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fscrollTop(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_scrollLeft(arg_0, arg_1, arg_2){//src/Dom.idr:145:1--147:11
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fscrollLeft(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+const Dom_prim$5f$5fwidth = ( n=>(BigInt(n.width)))
+
+
+const Dom_prim$5f$5ftop = ( r=>BigInt(r.top))
+
+
+const Dom_prim$5f$5fsetInterval = ( (a,i)=>setInterval(a,Number(i)))
+
+
+const Dom_prim$5f$5fsetAttribute = ( (n,k,v) => {n.setAttribute(k,v)})
+
+
+const Dom_prim$5f$5fscrollTop = ( e=>BigInt(e.scrollTop))
+
+
+const Dom_prim$5f$5fscrollLeft = ( e=>BigInt(e.scrollLeft))
+
+
+const Dom_prim$5f$5fleft = ( r=>BigInt(r.left))
+
+
+const Dom_prim$5f$5fheight = ( n=>(BigInt(n.height)))
+
+
+const Dom_prim$5f$5fgetContext = ( (c,t) => c.getContext(t))
+
+
+const Dom_prim$5f$5fgetBoundingClientRect = ( c=>c.getBoundingClientRect())
+
+
+const Dom_prim$5f$5ffillText = ( (c,t,x,y)=>c.fillText(t,Number(x),Number(y)))
+
+
+const Dom_prim$5f$5ffillStyle = ( ((c,s) => {c.fillStyle = s;}))
+
+
+const Dom_prim$5f$5ffillRect = ( (c,x,y,w,h) => c.fillRect(Number(x),Number(y),Number(w),Number(h)))
+
+
+const Dom_prim$5f$5ffill = ( c=>c.fill())
+
+
+const Dom_prim$5f$5fdocumentElement = ( ()=>document.documentElement)
+
+
+const Dom_prim$5f$5fcreateElement = ( tag => document.createElement(tag))
+
+
+const Dom_prim$5f$5fconsoleLog = ( x => console.log(x))
+
+
+const Dom_prim$5f$5fclientY = ( e=>(BigInt(e.clientY)))
+
+
+const Dom_prim$5f$5fclientX = ( e=>(BigInt(e.clientX)))
+
+
+const Dom_prim$5f$5fbody = ( () => document.body)
+
+
+const Dom_prim$5f$5fbeginPath = ( c =>c.beginPath())
+
+
+const Dom_prim$5f$5farc = ((c,x,y,r,s,e,b)=>c.arc(Number(x),Number(y),Number(r),Number(s),Number(e),true))
+
+
+const Dom_prim$5f$5fappendChild = ( (node, child) => node.appendChild(child))
+
+
+const Dom_prim$5f$5faddEventListener = ( (event, callback, node) => node.addEventListener(event, x=>callback(x)()))
+
+
+function Dom_left(arg_0, arg_1, arg_2){//src/Dom.idr:127:1--129:5
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fleft(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_height(arg_0, arg_1, arg_2){//src/Dom.idr:100:1--102:7
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fheight(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_getContext(arg_0, arg_1, arg_2, arg_3){//src/Dom.idr:52:1--54:11
+ let imp$5fgen_141;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_141 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ let imp$5fgen_142;
+ switch(imp$5fgen_141.h){
+  case 0: {
+   imp$5fgen_142 = imp$5fgen_141.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+ }
+ switch(imp$5fgen_142.h){
+  case 0: {
+   let imp$5fgen_143;
+   switch(arg_1.h){
+    case 0: {
+     imp$5fgen_143 = arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fgetContext(arg_2, arg_3, eta_0);});
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+   }
+   return imp$5fgen_142.a1(undefined)(undefined)((eta_0) => {return eta_0;})(imp$5fgen_143);
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+ }
+}
+
+function Dom_getBoundingClientRect(arg_0, arg_1, arg_2){//src/Dom.idr:121:1--123:22
+ let imp$5fgen_144;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_144 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ let imp$5fgen_145;
+ switch(imp$5fgen_144.h){
+  case 0: {
+   imp$5fgen_145 = imp$5fgen_144.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+ }
+ switch(imp$5fgen_145.h){
+  case 0: {
+   let imp$5fgen_146;
+   switch(arg_1.h){
+    case 0: {
+     imp$5fgen_146 = arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fgetBoundingClientRect(arg_2, eta_0);});
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+   }
+   return imp$5fgen_145.a1(undefined)(undefined)((eta_0) => {return eta_0;})(imp$5fgen_146);
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+ }
+}
+
+function Dom_fillText(arg_0, arg_1, arg_2, arg_3, ext_0){//src/Dom.idr:70:1--72:9
+ return Dom_prim$5f$5ffillText(arg_0, arg_1, arg_2, arg_3, ext_0);
+}
+
+function Dom_fillStyle(arg_0, arg_1, arg_2, arg_3){//src/Dom.idr:58:1--60:10
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5ffillStyle(arg_2, arg_3, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_fillRect(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6){//src/Dom.idr:64:1--66:9
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5ffillRect(arg_2, arg_3, arg_4, arg_5, arg_6, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_fill(arg_0, arg_1, arg_2){//src/Dom.idr:88:1--90:5
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5ffill(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_documentElement(arg_0, arg_1){//src/Dom.idr:139:1--141:16
+ let imp$5fgen_147;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_147 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ let imp$5fgen_148;
+ switch(imp$5fgen_147.h){
+  case 0: {
+   imp$5fgen_148 = imp$5fgen_147.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+ }
+ switch(imp$5fgen_148.h){
+  case 0: {
+   let imp$5fgen_149;
+   switch(arg_1.h){
+    case 0: {
+     imp$5fgen_149 = arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fdocumentElement(({h:0}), eta_0);});
+     break; }
+    default:
+     throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+   }
+   return imp$5fgen_148.a1(undefined)(undefined)((eta_0) => {return eta_0;})(imp$5fgen_149);
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+ }
+}
+
+function Dom_createElement(arg_0, arg_1, arg_2){//src/Dom.idr:17:1--19:14
+ let imp$5fgen_150;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_150 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ let imp$5fgen_151;
+ switch(imp$5fgen_150.h){
+  case 0: {
+   imp$5fgen_151 = imp$5fgen_150.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+ }
+ let imp$5fgen_152;
+ switch(imp$5fgen_151.h){
+  case 0: {
+   imp$5fgen_152 = imp$5fgen_151.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+ }
+ let imp$5fgen_153;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_153 = arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fcreateElement(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+ return Prelude_Interfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_152, (eta_0) => {return eta_0;}, imp$5fgen_153);
+}
+
+function Dom_consoleLog(arg_0, arg_1, arg_2){//src/Dom.idr:11:1--13:11
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fconsoleLog(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_clientY(arg_0, arg_1, arg_2){//src/Dom.idr:112:1--114:8
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fclientY(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_clientX(arg_0, arg_1, arg_2){//src/Dom.idr:106:1--108:8
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fclientX(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_body(arg_0, arg_1){//src/Dom.idr:29:1--31:5
+ let imp$5fgen_154;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_154 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+ }
+ let imp$5fgen_155;
+ switch(imp$5fgen_154.h){
+  case 0: {
+   imp$5fgen_155 = imp$5fgen_154.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+ }
+ let imp$5fgen_156;
+ switch(imp$5fgen_155.h){
+  case 0: {
+   imp$5fgen_156 = imp$5fgen_155.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+ }
+ let imp$5fgen_157;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_157 = arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fbody(({h:0}), eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+ return Prelude_Interfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_156, (eta_0) => {return eta_0;}, imp$5fgen_157);
+}
+
+function Dom_beginPath(arg_0, arg_1, arg_2){//src/Dom.idr:82:1--84:10
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fbeginPath(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_arc(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7){//src/Dom.idr:76:1--78:4
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5farc(arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_appendChild(arg_0, arg_1, arg_2, arg_3){//src/Dom.idr:23:1--25:12
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5fappendChild(arg_2, arg_3, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function Dom_addEventListener(arg_0, arg_1, arg_2, arg_3, arg_4){//src/Dom.idr:41:1--43:17
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Dom_prim$5f$5faddEventListener(arg_2, (ptr) => {return arg_4(ptr);}, arg_3, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+function GameLogic_Graphics_case__case$20block$20in$20case$20block$20in$20drawBall_1886(arg_0, arg_1, arg_2, arg_3, arg_4){//src/GameLogic.idr:171:18--173:22
+ switch(arg_4){
+  case 0n: {
+   return 'Right Player Won!';
+   break; }
+  case 1n: {
+   return '';
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_Graphics_case__case$20block$20in$20drawBall_1859(arg_0, arg_1, arg_2, arg_3, arg_4){//src/GameLogic.idr:169:12--173:23
+ switch(arg_4){
+  case 0n: {
+   return 'Left Player Won!';
+   break; }
+  case 1n: {
+   let imp$5fgen_158;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_158 = arg_0.a8;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   return GameLogic_Graphics_case__case$20block$20in$20case$20block$20in$20drawBall_1886(arg_0, arg_1, arg_2, arg_3, Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_158, GameLogic_WINNING$5fSCORE()));
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_Graphics_case__drawBall_1817(arg_0, arg_1, arg_2, arg_3){//src/GameLogic.idr:165:5--189:1
+ switch(arg_3){
+  case 0n: {
+   return (eta_0) => {const imp$5fgen_164 = Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_1) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_1);};};};};}, a2: (a) => {return (arg_482) => {return (eta_1) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_1) => {const imp$5fgen_160 = arg_483(eta_1);
+const imp$5fgen_159 = arg_485(eta_1);
+return imp$5fgen_160(imp$5fgen_159);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_1) => {const imp$5fgen_161 = arg_644(eta_1);
+return arg_645(imp$5fgen_161)(eta_1);};};};};}, a3: (a) => {return (arg_647) => {return (eta_1) => {const imp$5fgen_162 = arg_647(eta_1);
+return imp$5fgen_162(eta_1);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1, 'white')(eta_0);
+let imp$5fgen_163;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_163 = arg_0.a7;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+Dom_fillText(arg_1, GameLogic_Graphics_case__case$20block$20in$20drawBall_1859(arg_0, arg_1, arg_2, imp$5fgen_164, Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_163, GameLogic_WINNING$5fSCORE())), (350n % __esPrim_int_bound_63), (200n % __esPrim_int_bound_63), eta_0);
+return Dom_fillText(arg_1, 'click to continue', (350n % __esPrim_int_bound_63), (500n % __esPrim_int_bound_63), eta_0);};
+   break; }
+  case 1n: {
+   return (eta_0) => {GameLogic_Graphics_drawNet(arg_1, arg_0)(eta_0);
+let imp$5fgen_165;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_165 = arg_0.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_166;
+switch(imp$5fgen_165.h){
+ case 0: {
+  imp$5fgen_166 = imp$5fgen_165.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+}
+let imp$5fgen_167;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_167 = arg_0.a5;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_168;
+switch(imp$5fgen_167.h){
+ case 0: {
+  imp$5fgen_168 = imp$5fgen_167.a2;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+}
+GameLogic_Graphics_colorRect(arg_1, 0n, imp$5fgen_166, GameLogic_PADDLE$5fTHICKNESS(), imp$5fgen_168, 'white', eta_0);
+let imp$5fgen_169;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_169 = arg_0.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_170;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_170 = arg_0.a6;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_171;
+switch(imp$5fgen_170.h){
+ case 0: {
+  imp$5fgen_171 = imp$5fgen_170.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+}
+let imp$5fgen_172;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_172 = arg_0.a6;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_173;
+switch(imp$5fgen_172.h){
+ case 0: {
+  imp$5fgen_173 = imp$5fgen_172.a2;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+}
+GameLogic_Graphics_colorRect(arg_1, Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_169, GameLogic_PADDLE$5fTHICKNESS()), imp$5fgen_171, GameLogic_PADDLE$5fTHICKNESS(), imp$5fgen_173, 'white', eta_0);
+let imp$5fgen_174;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_174 = arg_0.a3;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_175;
+switch(imp$5fgen_174.h){
+ case 0: {
+  imp$5fgen_175 = imp$5fgen_174.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+}
+let imp$5fgen_176;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_176 = arg_0.a3;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_177;
+switch(imp$5fgen_176.h){
+ case 0: {
+  imp$5fgen_177 = imp$5fgen_176.a2;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+}
+GameLogic_Graphics_colorCircle(arg_1, imp$5fgen_175, imp$5fgen_177, 10n, 'white', eta_0);
+let imp$5fgen_178;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_178 = arg_0.a7;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+Dom_fillText(arg_1, Prelude_Show_show$5fShow$5f$5fInt(imp$5fgen_178), (100n % __esPrim_int_bound_63), (100n % __esPrim_int_bound_63), eta_0);
+let imp$5fgen_179;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_179 = arg_0.a8;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+let imp$5fgen_180;
+switch(arg_0.h){
+ case 0: {
+  imp$5fgen_180 = arg_0.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+return Dom_fillText(arg_1, Prelude_Show_show$5fShow$5f$5fInt(imp$5fgen_179), Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_180, (100n % __esPrim_int_bound_63)), (100n % __esPrim_int_bound_63), eta_0);};
+   break; }
+  default:
+   throw new Error('unhandled const case on src/GameLogic.idr:40:15--40:19');
+ }
+}
+
+function GameLogic_case__restartGame_1661(arg_0, arg_1){//src/GameLogic.idr:137:3--139:11
+ switch(arg_1){
+  case 0n: {
+   let imp$5fgen_181;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_181 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: arg_0.a6, a7: 0n, a8: 0n, a9: 1n});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:135:15--135:20');
+   }
+   return GameLogic_ballReset(imp$5fgen_181);
+   break; }
+  case 1n: {
+   return arg_0;
+   break; }
+  default:
+   throw new Error('unhandled const case on src/GameLogic.idr:40:15--40:19');
+ }
+}
+
+function GameLogic_case__moveBall_1599(arg_0, arg_1){//src/GameLogic.idr:123:5--124:52
+ switch(arg_1){
+  case 0n: {
+   return arg_0;
+   break; }
+  case 1n: {
+   return GameLogic_bounceBall(GameLogic_computerMovement(GameLogic_rollBall(arg_0)));
+   break; }
+  default:
+   throw new Error('unhandled const case on src/GameLogic.idr:40:15--40:19');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1566(arg_0, arg_1){//src/GameLogic.idr:90:14--92:61
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_n__2344_1350_changeBallVelPaddle1(arg_0, GameLogic_n__2344_1348_changeXDirection(arg_0, arg_0));
+   break; }
+  case 1n: {
+   let imp$5fgen_182;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_182 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: arg_0.a6, a7: arg_0.a7, a8: ((arg_0.a8 + (1n % __esPrim_int_bound_63)) % __esPrim_int_bound_63), a9: arg_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:81:14--81:19');
+   }
+   return GameLogic_ballReset(imp$5fgen_182);
+   break; }
+  default:
+   throw new Error('unhandled const case on src/GameLogic.idr:95:30--95:34');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1560(arg_0, arg_1){//src/GameLogic.idr:89:8--93:9
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1566(arg_0, GameLogic_n__2344_1346_ballInPaddle1(arg_0, arg_0));
+   break; }
+  case 1n: {
+   return arg_0;
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1522(arg_0, arg_1){//src/GameLogic.idr:86:14--88:61
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_n__2344_1351_changeBallVelPaddle2(arg_0, GameLogic_n__2344_1348_changeXDirection(arg_0, arg_0));
+   break; }
+  case 1n: {
+   let imp$5fgen_183;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_183 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: arg_0.a6, a7: ((arg_0.a7 + (1n % __esPrim_int_bound_63)) % __esPrim_int_bound_63), a8: arg_0.a8, a9: arg_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:81:14--81:19');
+   }
+   return GameLogic_ballReset(imp$5fgen_183);
+   break; }
+  default:
+   throw new Error('unhandled const case on src/GameLogic.idr:99:30--99:34');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20case$20block$20in$20bounceBall_1516(arg_0, arg_1){//src/GameLogic.idr:85:8--94:8
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1522(arg_0, GameLogic_n__2344_1347_ballInPaddle2(arg_0, arg_0));
+   break; }
+  case 1n: {
+   let imp$5fgen_184;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_184 = arg_0.a3;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_185;
+   switch(imp$5fgen_184.h){
+    case 0: {
+     imp$5fgen_185 = imp$5fgen_184.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+   }
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1560(arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_185, (0n % __esPrim_int_bound_63)));
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20bounceBall_1503(arg_0, arg_1){//src/GameLogic.idr:84:8--94:8
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_n__2344_1349_changeYDirection(arg_0, arg_0);
+   break; }
+  case 1n: {
+   let imp$5fgen_186;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_186 = arg_0.a3;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_187;
+   switch(imp$5fgen_186.h){
+    case 0: {
+     imp$5fgen_187 = imp$5fgen_186.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+   }
+   let imp$5fgen_188;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_188 = arg_0.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20bounceBall_1516(arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_187, imp$5fgen_188));
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_case__bounceBall_1488(arg_0, arg_1){//src/GameLogic.idr:83:8--94:8
+ switch(arg_1){
+  case 0n: {
+   return GameLogic_n__2344_1349_changeYDirection(arg_0, arg_0);
+   break; }
+  case 1n: {
+   let imp$5fgen_189;
+   switch(arg_0.h){
+    case 0: {
+     imp$5fgen_189 = arg_0.a3;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_190;
+   switch(imp$5fgen_189.h){
+    case 0: {
+     imp$5fgen_190 = imp$5fgen_189.a2;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+   }
+   return GameLogic_case__case$20block$20in$20bounceBall_1503(arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_190, (0n % __esPrim_int_bound_63)));
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20case$20block$20in$20computerMovement_1294(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, arg_8, arg_9, arg_10, arg_11){//src/GameLogic.idr:74:14--75:25
+ switch(arg_11){
+  case 0n: {
+   let imp$5fgen_191;
+   switch(arg_10.h){
+    case 0: {
+     imp$5fgen_191 = arg_10.a6;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_192;
+   switch(imp$5fgen_191.h){
+    case 0: {
+     imp$5fgen_192 = imp$5fgen_191.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+   }
+   return Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_192, 6n);
+   break; }
+  case 1n: {
+   let imp$5fgen_193;
+   switch(arg_10.h){
+    case 0: {
+     imp$5fgen_193 = arg_10.a6;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_194;
+   switch(imp$5fgen_193.h){
+    case 0: {
+     imp$5fgen_194 = imp$5fgen_193.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+   }
+   return imp$5fgen_194;
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_case__case$20block$20in$20computerMovement_1231(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, arg_8, arg_9, arg_10, arg_11){//src/GameLogic.idr:73:14--76:4
+ switch(arg_11){
+  case 0n: {
+   let imp$5fgen_195;
+   switch(arg_10.h){
+    case 0: {
+     imp$5fgen_195 = arg_10.a6;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_196;
+   switch(imp$5fgen_195.h){
+    case 0: {
+     imp$5fgen_196 = imp$5fgen_195.a1;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+   }
+   return ((imp$5fgen_196 + 6n) % __esPrim_int_bound_63);
+   break; }
+  case 1n: {
+   let imp$5fgen_197;
+   switch(arg_10.h){
+    case 0: {
+     imp$5fgen_197 = arg_10.a3;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_198;
+   switch(imp$5fgen_197.h){
+    case 0: {
+     imp$5fgen_198 = imp$5fgen_197.a2;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+   }
+   let imp$5fgen_199;
+   switch(arg_10.h){
+    case 0: {
+     imp$5fgen_199 = arg_10.a6;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+   }
+   let imp$5fgen_200;
+   switch(imp$5fgen_199.h){
+    case 0: {
+     imp$5fgen_200 = imp$5fgen_199.a2;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+   }
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20computerMovement_1294(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, arg_8, arg_9, arg_10, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(GameLogic_n__2174_1195_cp(arg_10), ((imp$5fgen_198 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_200, 3n)) % __esPrim_int_bound_63)));
+   break; }
+  default:
+   throw new Error('unhandled const case on :1:1--1:1');
+ }
+}
+
+function GameLogic_n__2174_1195_cp(arg_0){//src/GameLogic.idr:78:5--79:7
+ let imp$5fgen_201;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_201 = arg_0.a6;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_202;
+ switch(imp$5fgen_201.h){
+  case 0: {
+   imp$5fgen_202 = imp$5fgen_201.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ let imp$5fgen_203;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_203 = arg_0.a6;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_204;
+ switch(imp$5fgen_203.h){
+  case 0: {
+   imp$5fgen_204 = imp$5fgen_203.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ return ((imp$5fgen_202 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_204, 2n)) % __esPrim_int_bound_63);
+}
+
+function GameLogic_n__2344_1349_changeYDirection(arg_0, ext_0){//src/GameLogic.idr:106:5--107:21
+ switch(ext_0.h){
+  case 0: {
+   let imp$5fgen_205;
+   switch(ext_0.a4.h){
+    case 0: {
+     imp$5fgen_205 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: ext_0.a4.a1, a2: Prelude_Num_negate$5fNeg$5f$5fInt(ext_0.a4.a2)}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:35:15--35:23');
+   }
+   return imp$5fgen_205;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:106:24--106:29');
+ }
+}
+
+function GameLogic_n__2344_1348_changeXDirection(arg_0, ext_0){//src/GameLogic.idr:103:5--104:21
+ switch(ext_0.h){
+  case 0: {
+   let imp$5fgen_206;
+   switch(ext_0.a4.h){
+    case 0: {
+     imp$5fgen_206 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: Prelude_Num_negate$5fNeg$5f$5fInt(ext_0.a4.a1), a2: ext_0.a4.a2}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:35:15--35:23');
+   }
+   return imp$5fgen_206;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:103:24--103:29');
+ }
+}
+
+function GameLogic_n__2344_1351_changeBallVelPaddle2(arg_0, arg_1){//src/GameLogic.idr:114:5--115:25
+ switch(arg_1.h){
+  case 0: {
+   let imp$5fgen_207;
+   switch(arg_1.a4.h){
+    case 0: {
+     let imp$5fgen_208;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_208 = arg_1.a3;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_209;
+     switch(imp$5fgen_208.h){
+      case 0: {
+       imp$5fgen_209 = imp$5fgen_208.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+     }
+     let imp$5fgen_210;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_210 = arg_1.a6;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_211;
+     switch(imp$5fgen_210.h){
+      case 0: {
+       imp$5fgen_211 = imp$5fgen_210.a1;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     let imp$5fgen_212;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_212 = arg_1.a6;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_213;
+     switch(imp$5fgen_212.h){
+      case 0: {
+       imp$5fgen_213 = imp$5fgen_212.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     imp$5fgen_207 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude_Num_div$5fIntegral$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_209, ((imp$5fgen_211 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_213, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:35:15--35:23');
+   }
+   return imp$5fgen_207;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:114:28--114:33');
+ }
+}
+
+function GameLogic_n__2344_1350_changeBallVelPaddle1(arg_0, arg_1){//src/GameLogic.idr:109:5--110:25
+ switch(arg_1.h){
+  case 0: {
+   let imp$5fgen_214;
+   switch(arg_1.a4.h){
+    case 0: {
+     let imp$5fgen_215;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_215 = arg_1.a3;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_216;
+     switch(imp$5fgen_215.h){
+      case 0: {
+       imp$5fgen_216 = imp$5fgen_215.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+     }
+     let imp$5fgen_217;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_217 = arg_1.a5;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_218;
+     switch(imp$5fgen_217.h){
+      case 0: {
+       imp$5fgen_218 = imp$5fgen_217.a1;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     let imp$5fgen_219;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_219 = arg_1.a5;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_220;
+     switch(imp$5fgen_219.h){
+      case 0: {
+       imp$5fgen_220 = imp$5fgen_219.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     imp$5fgen_214 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude_Num_div$5fIntegral$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_216, ((imp$5fgen_218 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_220, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:35:15--35:23');
+   }
+   return imp$5fgen_214;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:109:28--109:33');
+ }
+}
+
+function GameLogic_n__2344_1347_ballInPaddle2(arg_0, arg_1){//src/GameLogic.idr:99:5--100:18
+ let imp$5fgen_221;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_221 = arg_1.a6;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_222;
+ switch(imp$5fgen_221.h){
+  case 0: {
+   imp$5fgen_222 = imp$5fgen_221.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ let imp$5fgen_223;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_223 = arg_1.a3;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_224;
+ switch(imp$5fgen_223.h){
+  case 0: {
+   imp$5fgen_224 = imp$5fgen_223.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+ }
+ let imp$5fgen_225;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_225 = arg_1.a3;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_226;
+ switch(imp$5fgen_225.h){
+  case 0: {
+   imp$5fgen_226 = imp$5fgen_225.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+ }
+ let imp$5fgen_227;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_227 = arg_1.a6;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_228;
+ switch(imp$5fgen_227.h){
+  case 0: {
+   imp$5fgen_228 = imp$5fgen_227.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ let imp$5fgen_229;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_229 = arg_1.a6;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_230;
+ switch(imp$5fgen_229.h){
+  case 0: {
+   imp$5fgen_230 = imp$5fgen_229.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ return Prelude_Basics_$26$26(Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_222, imp$5fgen_224), (()=>Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_226, ((imp$5fgen_228 + imp$5fgen_230) % __esPrim_int_bound_63))));
+}
+
+function GameLogic_n__2344_1346_ballInPaddle1(arg_0, arg_1){//src/GameLogic.idr:95:5--96:18
+ let imp$5fgen_231;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_231 = arg_1.a5;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_232;
+ switch(imp$5fgen_231.h){
+  case 0: {
+   imp$5fgen_232 = imp$5fgen_231.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ let imp$5fgen_233;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_233 = arg_1.a3;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_234;
+ switch(imp$5fgen_233.h){
+  case 0: {
+   imp$5fgen_234 = imp$5fgen_233.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+ }
+ let imp$5fgen_235;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_235 = arg_1.a3;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_236;
+ switch(imp$5fgen_235.h){
+  case 0: {
+   imp$5fgen_236 = imp$5fgen_235.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+ }
+ let imp$5fgen_237;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_237 = arg_1.a5;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_238;
+ switch(imp$5fgen_237.h){
+  case 0: {
+   imp$5fgen_238 = imp$5fgen_237.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ let imp$5fgen_239;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_239 = arg_1.a5;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_240;
+ switch(imp$5fgen_239.h){
+  case 0: {
+   imp$5fgen_240 = imp$5fgen_239.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+ }
+ return Prelude_Basics_$26$26(Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_232, imp$5fgen_234), (()=>Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_236, ((imp$5fgen_238 + imp$5fgen_240) % __esPrim_int_bound_63))));
+}
+
+function GameLogic_setPaddle1y(arg_0, arg_1){//src/GameLogic.idr:126:1--128:12
+ switch(arg_1.h){
+  case 0: {
+   let imp$5fgen_241;
+   switch(arg_1.a5.h){
+    case 0: {
+     let imp$5fgen_242;
+     switch(arg_1.h){
+      case 0: {
+       imp$5fgen_242 = arg_1.a5;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_243;
+     switch(imp$5fgen_242.h){
+      case 0: {
+       imp$5fgen_243 = imp$5fgen_242.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     imp$5fgen_241 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: arg_1.a4, a5: ({h:0, a1: Prelude_Num_$2d$5fNeg$5f$5fInt(arg_0, Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_243, 2n)), a2: arg_1.a5.a2}), a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:36:15--36:21');
+   }
+   return imp$5fgen_241;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:127:22--127:27');
+ }
+}
+
+function GameLogic_rollBall(arg_0){//src/GameLogic.idr:64:1--65:9
+ switch(arg_0.h){
+  case 0: {
+   let imp$5fgen_244;
+   switch(arg_0.a3.h){
+    case 0: {
+     let imp$5fgen_245;
+     switch(arg_0.h){
+      case 0: {
+       imp$5fgen_245 = arg_0.a4;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_246;
+     switch(imp$5fgen_245.h){
+      case 0: {
+       imp$5fgen_246 = imp$5fgen_245.a1;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:19:1--24:7');
+     }
+     let imp$5fgen_247;
+     switch(arg_0.h){
+      case 0: {
+       imp$5fgen_247 = arg_0.a4;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_248;
+     switch(imp$5fgen_247.h){
+      case 0: {
+       imp$5fgen_248 = imp$5fgen_247.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:19:1--24:7');
+     }
+     imp$5fgen_244 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: ({h:0, a1: ((arg_0.a3.a1 + imp$5fgen_246) % __esPrim_int_bound_63), a2: ((arg_0.a3.a2 + imp$5fgen_248) % __esPrim_int_bound_63)}), a4: arg_0.a4, a5: arg_0.a5, a6: arg_0.a6, a7: arg_0.a7, a8: arg_0.a8, a9: arg_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:34:15--34:19');
+   }
+   return imp$5fgen_244;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:64:12--64:17');
+ }
+}
+
+function GameLogic_restartGame(arg_0){//src/GameLogic.idr:134:1--136:12
+ let imp$5fgen_249;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_249 = arg_0.a9;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ return GameLogic_case__restartGame_1661(arg_0, imp$5fgen_249);
+}
+
+function GameLogic_moveBall(arg_0){//src/GameLogic.idr:119:1--122:9
+ let imp$5fgen_250;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_250 = arg_0.a9;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ return GameLogic_case__moveBall_1599(arg_0, imp$5fgen_250);
+}
+
+function GameLogic_initBall(arg_0, arg_1, ext_0){//src/GameLogic.idr:42:1--44:9
+ return ({h:0, a1: arg_0, a2: arg_1, a3: ({h:0, a1: Prelude_Num_div$5fIntegral$5f$5fInt(arg_0, 2n), a2: Prelude_Num_div$5fIntegral$5f$5fInt(arg_1, 2n)}), a4: ({h:0, a1: 5n, a2: 5n}), a5: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a6: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a7: 0n, a8: 0n, a9: 1n});
+}
+
+function GameLogic_Graphics_drawNet(arg_0, arg_1){//src/GameLogic.idr:155:3--156:10
+ let imp$5fgen_254;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_254 = arg_1.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ return Prelude_Interfaces_traverse$5f(undefined, undefined, undefined, undefined, ({h:0, a1: ({h:0, a1: (acc) => {return (elem) => {return (func) => {return (init) => {return (input) => {return Prelude_Types_foldr$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}, a2: (elem) => {return (acc) => {return (func) => {return (init) => {return (input) => {return Prelude_Types_foldl$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}}), a2: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_252 = arg_483(eta_0);
+const imp$5fgen_251 = arg_485(eta_0);
+return imp$5fgen_252(imp$5fgen_251);};};};};}})}), (i) => {return (eta_0) => {let imp$5fgen_253;
+switch(arg_1.h){
+ case 0: {
+  imp$5fgen_253 = arg_1.a1;
+  break; }
+ default:
+  throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+}
+return GameLogic_Graphics_colorRect(arg_0, Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_253, 2n), 1n), ((i * (40n % __esPrim_int_bound_63)) % __esPrim_int_bound_63), 2n, 20n, 'white', eta_0);};})(Prelude_Types_rangeFromTo$5fRange$5f$5f$24a(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_2) => {return (arg_3) => {return ((arg_2 + arg_3) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_183) => {return (arg_184) => {return Prelude_Num_div$5fIntegral$5f$5fInt(arg_183, arg_184);};}, a3: (arg_185) => {return (arg_186) => {return Prelude_Num_mod$5fIntegral$5f$5fInt(arg_185, arg_186);};}}), a2: ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_2) => {return (arg_3) => {return Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_2, arg_3);};}, a2: (arg_4) => {return (arg_5) => {return Prelude_EqOrd_$2f$3d$5fEq$5f$5fInt(arg_4, arg_5);};}}), a2: (arg_369) => {return (arg_370) => {return Prelude_EqOrd_compare$5fOrd$5f$5fInt(arg_369, arg_370);};}, a3: (arg_371) => {return (arg_372) => {return Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_371, arg_372);};}, a4: (arg_373) => {return (arg_374) => {return Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_373, arg_374);};}, a5: (arg_375) => {return (arg_376) => {return Prelude_EqOrd_$3c$3d$5fOrd$5f$5fInt(arg_375, arg_376);};}, a6: (arg_377) => {return (arg_378) => {return Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(arg_377, arg_378);};}, a7: (arg_379) => {return (arg_380) => {return Prelude_EqOrd_max$5fOrd$5f$5fInt(arg_379, arg_380);};}, a8: (arg_381) => {return (arg_382) => {return Prelude_EqOrd_min$5fOrd$5f$5fInt(arg_381, arg_382);};}}), a2: ({h:0, a1: ({h:0, a1: (arg_2) => {return (arg_3) => {return ((arg_2 + arg_3) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_56) => {return Prelude_Num_negate$5fNeg$5f$5fInt(arg_56);}, a3: (arg_57) => {return (arg_58) => {return Prelude_Num_$2d$5fNeg$5f$5fInt(arg_57, arg_58);};}})})}), 0n, Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_254, 40n)));
+}
+
+function GameLogic_Graphics_drawBall(arg_0, arg_1, ext_0){//src/GameLogic.idr:160:3--162:11
+ let imp$5fgen_255;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_255 = arg_1.a1;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_256;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_256 = arg_1.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ const imp$5fgen_258 = GameLogic_Graphics_colorRect(arg_0, 0n, 0n, imp$5fgen_255, imp$5fgen_256, 'black', ext_0);
+ let imp$5fgen_257;
+ switch(arg_1.h){
+  case 0: {
+   imp$5fgen_257 = arg_1.a9;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ return GameLogic_Graphics_case__drawBall_1817(arg_1, arg_0, imp$5fgen_258, imp$5fgen_257)(ext_0);
+}
+
+function GameLogic_computerMovement(arg_0){//src/GameLogic.idr:70:1--71:17
+ switch(arg_0.h){
+  case 0: {
+   let imp$5fgen_259;
+   switch(arg_0.a6.h){
+    case 0: {
+     const imp$5fgen_264 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: ({h:0, a1: arg_0.a6.a1, a2: arg_0.a6.a2}), a7: arg_0.a7, a8: arg_0.a8, a9: arg_0.a9});
+     let imp$5fgen_260;
+     switch(imp$5fgen_264.h){
+      case 0: {
+       imp$5fgen_260 = imp$5fgen_264.a3;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_261;
+     switch(imp$5fgen_260.h){
+      case 0: {
+       imp$5fgen_261 = imp$5fgen_260.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+     }
+     let imp$5fgen_262;
+     switch(imp$5fgen_264.h){
+      case 0: {
+       imp$5fgen_262 = imp$5fgen_264.a6;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+     }
+     let imp$5fgen_263;
+     switch(imp$5fgen_262.h){
+      case 0: {
+       imp$5fgen_263 = imp$5fgen_262.a2;
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:24:1--29:7');
+     }
+     imp$5fgen_259 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: ({h:0, a1: GameLogic_case__case$20block$20in$20computerMovement_1231(arg_0.a6.a2, arg_0.a6.a1, arg_0.a9, arg_0.a8, arg_0.a7, arg_0.a5, arg_0.a4, arg_0.a3, arg_0.a2, arg_0.a1, imp$5fgen_264, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(GameLogic_n__2174_1195_cp(imp$5fgen_264), Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_261, Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_263, 3n)))), a2: arg_0.a6.a2}), a7: arg_0.a7, a8: arg_0.a8, a9: arg_0.a9});
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:37:15--37:21');
+   }
+   return imp$5fgen_259;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:70:20--70:25');
+ }
+}
+
+function GameLogic_Graphics_colorRect(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, ext_0){//src/GameLogic.idr:143:3--144:12
+ Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_266 = arg_483(eta_0);
+const imp$5fgen_265 = arg_485(eta_0);
+return imp$5fgen_266(imp$5fgen_265);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_267 = arg_644(eta_0);
+return arg_645(imp$5fgen_267)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_268 = arg_647(eta_0);
+return imp$5fgen_268(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_5)(ext_0);
+ return Dom_fillRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_270 = arg_483(eta_0);
+const imp$5fgen_269 = arg_485(eta_0);
+return imp$5fgen_270(imp$5fgen_269);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_271 = arg_644(eta_0);
+return arg_645(imp$5fgen_271)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_272 = arg_647(eta_0);
+return imp$5fgen_272(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_1, arg_2, arg_3, arg_4)(ext_0);
+}
+
+function GameLogic_Graphics_colorCircle(arg_0, arg_1, arg_2, arg_3, arg_4, ext_0){//src/GameLogic.idr:148:3--149:14
+ Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_274 = arg_483(eta_0);
+const imp$5fgen_273 = arg_485(eta_0);
+return imp$5fgen_274(imp$5fgen_273);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_275 = arg_644(eta_0);
+return arg_645(imp$5fgen_275)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_276 = arg_647(eta_0);
+return imp$5fgen_276(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_4)(ext_0);
+ Dom_beginPath(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_278 = arg_483(eta_0);
+const imp$5fgen_277 = arg_485(eta_0);
+return imp$5fgen_278(imp$5fgen_277);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_279 = arg_644(eta_0);
+return arg_645(imp$5fgen_279)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_280 = arg_647(eta_0);
+return imp$5fgen_280(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0)(ext_0);
+ Dom_arc(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_282 = arg_483(eta_0);
+const imp$5fgen_281 = arg_485(eta_0);
+return imp$5fgen_282(imp$5fgen_281);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_283 = arg_644(eta_0);
+return arg_645(imp$5fgen_283)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_284 = arg_647(eta_0);
+return imp$5fgen_284(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_1, arg_2, arg_3, 0.0, Prelude_Num_$2a$5fNum$5f$5fDouble(GameLogic_PI(), 2.0))(ext_0);
+ return Dom_fill(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_286 = arg_483(eta_0);
+const imp$5fgen_285 = arg_485(eta_0);
+return imp$5fgen_286(imp$5fgen_285);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_287 = arg_644(eta_0);
+return arg_645(imp$5fgen_287)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_288 = arg_647(eta_0);
+return imp$5fgen_288(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0)(ext_0);
+}
+
+function GameLogic_bounceBall(arg_0){//src/GameLogic.idr:81:1--82:11
+ let imp$5fgen_289;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_289 = arg_0.a3;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ let imp$5fgen_290;
+ switch(imp$5fgen_289.h){
+  case 0: {
+   imp$5fgen_290 = imp$5fgen_289.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:14:1--19:7');
+ }
+ let imp$5fgen_291;
+ switch(arg_0.h){
+  case 0: {
+   imp$5fgen_291 = arg_0.a2;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+ }
+ return GameLogic_case__bounceBall_1488(arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_290, imp$5fgen_291));
+}
+
+function GameLogic_ballReset(arg_0){//src/GameLogic.idr:55:1--56:10
+ switch(arg_0.h){
+  case 0: {
+   let imp$5fgen_292;
+   switch(arg_0.a3.h){
+    case 0: {
+     let imp$5fgen_293;
+     switch(arg_0.a4.h){
+      case 0: {
+       let imp$5fgen_294;
+       switch(arg_0.h){
+        case 0: {
+         imp$5fgen_294 = arg_0.a1;
+         break; }
+        default:
+         throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+       }
+       let imp$5fgen_295;
+       switch(arg_0.h){
+        case 0: {
+         imp$5fgen_295 = arg_0.a2;
+         break; }
+        default:
+         throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+       }
+       let imp$5fgen_296;
+       switch(arg_0.h){
+        case 0: {
+         imp$5fgen_296 = arg_0.a7;
+         break; }
+        default:
+         throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+       }
+       let imp$5fgen_297;
+       switch(arg_0.h){
+        case 0: {
+         imp$5fgen_297 = arg_0.a8;
+         break; }
+        default:
+         throw new Error('unhandled con case on src/GameLogic.idr:29:1--42:7');
+       }
+       imp$5fgen_293 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: ({h:0, a1: Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_294, 2n), a2: Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_295, 2n)}), a4: ({h:0, a1: Prelude_Num_negate$5fNeg$5f$5fInt(arg_0.a4.a1), a2: 3n}), a5: arg_0.a5, a6: arg_0.a6, a7: arg_0.a7, a8: arg_0.a8, a9: Prelude_Basics_$7c$7c(Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_296, GameLogic_WINNING$5fSCORE()), (()=>Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_297, GameLogic_WINNING$5fSCORE())))});
+       break; }
+      default:
+       throw new Error('unhandled con case on src/GameLogic.idr:35:15--35:23');
+     }
+     imp$5fgen_292 = imp$5fgen_293;
+     break; }
+    default:
+     throw new Error('unhandled con case on src/GameLogic.idr:34:15--34:19');
+   }
+   return imp$5fgen_292;
+   break; }
+  default:
+   throw new Error('unhandled con case on src/GameLogic.idr:55:13--55:18');
+ }
+}
+
+function GameLogic_WINNING$5fSCORE(){//src/GameLogic.idr:8:1--9:14
+ return 5n;
+}
+
+function GameLogic_PI(){//src/GameLogic.idr:11:1--12:3
+ return 3.141592653589793;
+}
+
+function GameLogic_PADDLE$5fTHICKNESS(){//src/GameLogic.idr:5:1--6:17
+ return 10n;
+}
+try{PrimIO_unsafePerformIO(undefined, (eta_0) => {return Main_main(eta_0);});}catch(e){if(e instanceof IdrisError){console.log('ERROR: ' + e.message)}else{throw e} }  </script>
+ </body>
 </html>

@@ -1,71 +1,38 @@
 module Main
 
-import Console
-import Canvas
-import Window
+import Dom
 import GameLogic
+import GameLoop
 
-calculateMousePos : Event -> IO (Int, Int)
-calculateMousePos e = do
-  rect <- getBoundingClientRect
+
+calculateMousePos : DomNode -> DomEvent -> IO (Int, Int)
+calculateMousePos n e = do
+  rect <- getBoundingClientRect n
   root <- documentElement
   pure
     ( !(clientX e) - !(left rect) - !(scrollLeft root)
     , !(clientY e) - !(top  rect) - !(scrollTop  root)
     )
 
-namespace GameLoop
+movePaddle1 : DomNode -> DomEvent -> IO (State -> State)
+movePaddle1 c e = do
+  (_, y) <- calculateMousePos c e
+  pure $ setPaddle1y y
 
-  %foreign "browser:lambda:(s)=>{gameState=s;}"
-  prim__setGameState : State -> PrimIO ()
+restartGameOnClick : DomNode -> DomEvent -> IO (State -> State)
+restartGameOnClick _ _ = pure restartGame
 
-  setGameState : State -> IO ()
-  setGameState s = primIO $ prim__setGameState s
 
-  %foreign "browser:lambda:()=>{return gameState;}"
-  prim__getGameState : PrimIO State
-
-  getGameState : IO State
-  getGameState = primIO prim__getGameState
-
-  updateGameState : (State -> State) -> IO ()
-  updateGameState update = do
-    s <- getGameState
-    setGameState (update s)
-
-  drawGameState : (State -> IO ()) -> IO ()
-  drawGameState draw = do
-    s <- getGameState
-    draw s
-
-  export
-  gameLoop : Int -> IO State -> (State -> State) -> (State -> IO ()) -> IO ()
-  gameLoop fps mkInitState update draw = do
-    mkInitState >>= setGameState
-    setInterval
-      (do updateGameState update
-          drawGameState draw)
-      (1000 `div` fps)
-
-  export
-  registerHandler : String -> (Event -> IO (State -> State)) -> IO ()
-  registerHandler eventType handler = do
-    consoleLog "registerHandler"
-    addEventListener eventType $ do
-      e <- currentEvent eventType
-      u <- handler e
-      updateGameState u
-
--- TODO: Use: https://github.com/rbarreiro/ifui/blob/663e9bc6ea59338cfdea56d3d5b2740a7bf73d84/Ifui/HtmlViews.idr
 main : IO ()
 main = do
-  consoleLog "Starting..."
-  rect <- getBoundingClientRect
-  root <- documentElement
-  registerHandler "mousemove" $ \e => do
-    (_, y) <- calculateMousePos e
-    pure $ setPaddle1y y
-  registerHandler "mousedown" $ \e => do
-    -- Only restarts the game when somebody already won.
-    pure restartGame
-  gameLoop 30 initBall moveBall drawBall
+  consoleLog "Staring..."
+  canvas <- createElement "canvas"
+  setAttribute canvas "id" "gameCanvas"
+  setAttribute canvas "width" "800"
+  setAttribute canvas "height" "600"
+  appendChild !body canvas
+  gameContext <- createGameContext _ canvas 30 (initBall !(width canvas) !(height canvas))
+  registerHandler _ gameContext "mousemove" movePaddle1
+  registerHandler _ gameContext "mousedown" restartGameOnClick
+  gameLoop _ gameContext moveBall drawBall
+  consoleLog "Done."
