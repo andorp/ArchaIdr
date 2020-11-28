@@ -8,6 +8,9 @@ PADDLE_THICKNESS = 10
 WINNING_SCORE : Int
 WINNING_SCORE = 5
 
+PI : Double
+PI = 3.141592653589793
+
 record Ball where
   constructor MkBall
   X : Int
@@ -144,8 +147,7 @@ colorCircle : Int -> Int -> Int -> String -> IO ()
 colorCircle x y r c = do
   fillStyle c
   beginPath
---  arc x y r 0.0 (3.14 * 2)
-  arc x y r 0.0 6.283185307179586
+  arc x y r 0.0 (PI * 2)
   fill
 
 drawNet : State -> IO ()
