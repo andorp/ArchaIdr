@@ -1,15 +1,9 @@
 module GameLogic
 
-import Dom
-
-PADDLE_THICKNESS : Int
-PADDLE_THICKNESS = 10
+import Scene
 
 WINNING_SCORE : Int
 WINNING_SCORE = 5
-
-PI : Double
-PI = 3.141592653589793
 
 record Ball where
   constructor MkBall
@@ -138,51 +132,22 @@ restartGame s =
     then ballReset $ record { ShowWin = False , Score1 = 0 , Score2 = 0 } s
     else s
 
-namespace Graphics
-
-  colorRect : CanvasContext -> Int -> Int -> Int -> Int -> String -> IO ()
-  colorRect c l t w h q = do
-    fillStyle c q
-    fillRect c l t w h
-
-  colorCircle : CanvasContext -> Int -> Int -> Int -> String -> IO ()
-  colorCircle c x y r t = do
-    fillStyle c t
-    beginPath c
-    arc c x y r 0.0 (PI * 2)
-    fill c
-
-  drawNet : CanvasContext -> State -> IO ()
-  drawNet c s = traverse_
-    (\i => colorRect c ((s.Width `div` 2) - 1) (i * 40) 2 20 "white")
-    [0 .. (s.Height `div` 40)]
-
-  export
-  drawBall : CanvasContext -> State -> IO ()
-  drawBall c s = do
-    -- blanks out the screen with black
-    colorRect c 0 0 s.Width s.Height "black"
-    if s.ShowWin
-      then do
-        fillStyle c "white"
-        fillText c
-          (if s.Score1 >= WINNING_SCORE
-            then "Left Player Won!"
-            else if s.Score2 >= WINNING_SCORE
-              then "Right Player Won!"
-              else "")
-          350 200
-        fillText c "click to continue" 350 500
-      else do
-        -- draw net
-        drawNet c s
-        -- left paddle
-        colorRect c 0 s.Paddle1.Y PADDLE_THICKNESS s.Paddle1.Height "white"
-        -- right paddle
-        colorRect c (s.Width - PADDLE_THICKNESS) s.Paddle2.Y PADDLE_THICKNESS s.Paddle2.Height "white"
-        -- ball
-        colorCircle c s.Ball.X s.Ball.Y 10 "white"
-        -- Score for player 1
-        fillText c (show s.Score1) 100 100
-        -- Score for player 2
-        fillText c (show s.Score2) (s.Width - 100) 100
+export
+renderScene : State -> Scene
+renderScene s =
+  if s.ShowWin
+    then
+      (if s.Score1 >= WINNING_SCORE
+        then Player1Won s.Width s.Height
+        else if s.Score2 >= WINNING_SCORE
+              then Player2Won s.Width s.Height
+              else Empty s.Width s.Height)
+    else
+      InGame
+        s.Width
+        s.Height
+        (s.Paddle1.Y, s.Paddle1.Height)
+        (s.Paddle2.Y, s.Paddle2.Height)
+        (s.Ball.X, s.Ball.Y)
+        s.Score1
+        s.Score2

@@ -3,6 +3,8 @@ module Main
 import Dom
 import GameLogic
 import GameLoop
+import Graphics
+import Scene
 
 
 calculateMousePos : DomNode -> DomEvent -> IO (Int, Int)
@@ -26,13 +28,15 @@ restartGameOnClick _ _ = pure restartGame
 main : IO ()
 main = do
   consoleLog "Staring..."
-  canvas <- createElement "canvas"
-  setAttribute canvas "id" "gameCanvas"
-  setAttribute canvas "width" "800"
-  setAttribute canvas "height" "600"
-  appendChild !body canvas
+  canvas <- do
+    canvas <- createElement "canvas"
+    setAttribute canvas "id" "gameCanvas"
+    setAttribute canvas "width" "800"
+    setAttribute canvas "height" "600"
+    appendChild !body canvas
+    pure canvas
   gameContext <- createGameContext _ canvas 30 (initBall !(width canvas) !(height canvas))
   registerHandler _ gameContext "mousemove" movePaddle1
   registerHandler _ gameContext "mousedown" restartGameOnClick
-  gameLoop _ gameContext moveBall drawBall
+  gameLoop _ gameContext moveBall renderScene drawBall
   consoleLog "Done."

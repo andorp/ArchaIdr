@@ -18,12 +18,12 @@ parameters (state : Type)
   createGameContext c f i = pure $ MkGameContext c !(getContext c "2d") f !(i >>= newIORef)
 
   export
-  gameLoop : GameContext -> (state -> state) -> (CanvasContext -> state -> IO ()) -> IO ()
-  gameLoop ctx update draw = do
+  gameLoop : GameContext -> (state -> state) -> (state -> scene) -> (CanvasContext -> scene -> IO ()) -> IO ()
+  gameLoop ctx update scene draw = do
     setInterval
       (do s0 <- readIORef ctx.stateRef
           let s1 = update s0
-          draw ctx.canvasContext s1
+          draw ctx.canvasContext (scene s1)
           writeIORef ctx.stateRef s1)
       (1000 `div` ctx.fps)
 
