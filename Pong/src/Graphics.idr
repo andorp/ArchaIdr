@@ -37,14 +37,14 @@ drawBall c (Player1Won width height) = do
   -- blanks out the screen with black
   colorRect c 0 0 width height "black"
   fillStyle c "white"
-  fillText  c "Left Player Won!" ((width `div` 16) * 7) ((width `div` 16) * 2)
+  fillText  c "Left Player Won!"  ((width `div` 16) * 7) ((height `div` 6) * 2)
   fillText  c "Click to continue" ((width `div` 16) * 7) ((height `div` 6) * 5)
 
 drawBall c (Player2Won width height) = do
   -- blanks out the screen with black
   colorRect c 0 0 width height "black"
   fillStyle c "white"
-  fillText  c "Right Player Won!" ((width `div` 16) * 7) ((width `div` 16) * 2)
+  fillText  c "Right Player Won!" ((width `div` 16) * 7) ((height `div` 6) * 2)
   fillText  c "Click to continue" ((width `div` 16) * 7) ((height `div` 6) * 5)
 
 drawBall c (InGame width height (paddle1y, paddle1h) (paddle2y, paddle2h) (ballx,bally) score1 score2) = do
