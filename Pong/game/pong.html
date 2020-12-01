@@ -11,11 +11,11 @@ const __esPrim_crashExp = (x=>{throw new IdrisError(x)});
 const __esPrim_idrisworld = (Symbol('idrisworld'));
 const __esPrim_int_bound_63 = (BigInt(2) ** BigInt(63) );
 
-function Main_restartGameOnClick(arg_0, arg_1, ext_0, ext_1){//src/Main.idr:24:1--25:19
+function Main_restartGameOnClick(arg_0, arg_1, ext_0, ext_1){//src/Main.idr:24:1--24:64
  return GameLogic_restartGame(ext_1);
 }
 
-function Main_movePaddle1(arg_0, arg_1, ext_0){//src/Main.idr:19:1--20:12
+function Main_movePaddle1(arg_0, arg_1, ext_0){//src/Main.idr:19:1--19:57
  const imp$5fgen_1 = Main_calculateMousePos(arg_0, arg_1, ext_0);
  let imp$5fgen_0;
  switch(imp$5fgen_1.h){
@@ -28,109 +28,109 @@ function Main_movePaddle1(arg_0, arg_1, ext_0){//src/Main.idr:19:1--20:12
  return imp$5fgen_0;
 }
 
-function Main_main(ext_0){//src/Main.idr:28:1--29:5
- Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_3 = arg_483(eta_0);
+function Main_main(ext_0){//src/Main.idr:28:1--28:13
+ Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_3 = arg_483(eta_0);
 const imp$5fgen_2 = arg_485(eta_0);
 return imp$5fgen_3(imp$5fgen_2);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_4 = arg_644(eta_0);
 return arg_645(imp$5fgen_4)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_5 = arg_647(eta_0);
-return imp$5fgen_5(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'Staring...')(ext_0);
- const imp$5fgen_31 = Dom_createElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_7 = arg_483(eta_0);
+return imp$5fgen_5(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), 'Staring...')(ext_0);
+ const imp$5fgen_31 = Dom_createElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_7 = arg_483(eta_0);
 const imp$5fgen_6 = arg_485(eta_0);
 return imp$5fgen_7(imp$5fgen_6);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_8 = arg_644(eta_0);
 return arg_645(imp$5fgen_8)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_9 = arg_647(eta_0);
-return imp$5fgen_9(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'canvas')(ext_0);
- Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_11 = arg_483(eta_0);
+return imp$5fgen_9(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), 'canvas')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_11 = arg_483(eta_0);
 const imp$5fgen_10 = arg_485(eta_0);
 return imp$5fgen_11(imp$5fgen_10);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_12 = arg_644(eta_0);
 return arg_645(imp$5fgen_12)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_13 = arg_647(eta_0);
-return imp$5fgen_13(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_31, 'id', 'gameCanvas')(ext_0);
- Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_15 = arg_483(eta_0);
+return imp$5fgen_13(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_31, 'id', 'gameCanvas')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_15 = arg_483(eta_0);
 const imp$5fgen_14 = arg_485(eta_0);
 return imp$5fgen_15(imp$5fgen_14);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_16 = arg_644(eta_0);
 return arg_645(imp$5fgen_16)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_17 = arg_647(eta_0);
-return imp$5fgen_17(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_31, 'width', '800')(ext_0);
- Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_19 = arg_483(eta_0);
+return imp$5fgen_17(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_31, 'width', '800')(ext_0);
+ Dom_setAttribute(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_19 = arg_483(eta_0);
 const imp$5fgen_18 = arg_485(eta_0);
 return imp$5fgen_19(imp$5fgen_18);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_20 = arg_644(eta_0);
 return arg_645(imp$5fgen_20)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_21 = arg_647(eta_0);
-return imp$5fgen_21(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_31, 'height', '600')(ext_0);
- const imp$5fgen_30 = Dom_body(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_23 = arg_483(eta_0);
+return imp$5fgen_21(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_31, 'height', '600')(ext_0);
+ const imp$5fgen_30 = Dom_body(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_23 = arg_483(eta_0);
 const imp$5fgen_22 = arg_485(eta_0);
 return imp$5fgen_23(imp$5fgen_22);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_24 = arg_644(eta_0);
 return arg_645(imp$5fgen_24)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_25 = arg_647(eta_0);
-return imp$5fgen_25(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}))(ext_0);
- Dom_appendChild(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_27 = arg_483(eta_0);
+return imp$5fgen_25(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}))(ext_0);
+ Dom_appendChild(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_27 = arg_483(eta_0);
 const imp$5fgen_26 = arg_485(eta_0);
 return imp$5fgen_27(imp$5fgen_26);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_28 = arg_644(eta_0);
 return arg_645(imp$5fgen_28)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_29 = arg_647(eta_0);
-return imp$5fgen_29(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_30, imp$5fgen_31)(ext_0);
+return imp$5fgen_29(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_30, imp$5fgen_31)(ext_0);
  const imp$5fgen_47 = imp$5fgen_31;
- const imp$5fgen_41 = Dom_width(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_33 = arg_483(eta_0);
+ const imp$5fgen_41 = Dom_width(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_33 = arg_483(eta_0);
 const imp$5fgen_32 = arg_485(eta_0);
 return imp$5fgen_33(imp$5fgen_32);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_34 = arg_644(eta_0);
 return arg_645(imp$5fgen_34)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_35 = arg_647(eta_0);
-return imp$5fgen_35(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_47)(ext_0);
- const imp$5fgen_40 = Dom_height(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_37 = arg_483(eta_0);
+return imp$5fgen_35(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_47)(ext_0);
+ const imp$5fgen_40 = Dom_height(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_37 = arg_483(eta_0);
 const imp$5fgen_36 = arg_485(eta_0);
 return imp$5fgen_37(imp$5fgen_36);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_38 = arg_644(eta_0);
 return arg_645(imp$5fgen_38)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_39 = arg_647(eta_0);
-return imp$5fgen_39(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_47)(ext_0);
+return imp$5fgen_39(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_47)(ext_0);
  const imp$5fgen_46 = GameLoop_createGameContext(({h:'GameLogic.State'}), imp$5fgen_47, 30n, (eta_0) => {return GameLogic_initBall(imp$5fgen_41, imp$5fgen_40, eta_0);}, ext_0);
  GameLoop_registerHandler(({h:'GameLogic.State'}), imp$5fgen_46, 'mousemove', (eta_0) => {return (eta_1) => {return (eta_2) => {return Main_movePaddle1(eta_0, eta_1, eta_2);};};})(ext_0);
  GameLoop_registerHandler(({h:'GameLogic.State'}), imp$5fgen_46, 'mousedown', (eta_0) => {return (eta_1) => {return (eta_2) => {return (eta_3) => {return Main_restartGameOnClick(eta_0, eta_1, eta_2, eta_3);};};};})(ext_0);
  GameLoop_gameLoop(({h:'GameLogic.State'}), undefined, imp$5fgen_46, (eta_0) => {return GameLogic_moveBall(eta_0);}, (eta_0) => {return GameLogic_renderScene(eta_0);}, (eta_0) => {return (eta_1) => {return Graphics_drawBall(eta_0, eta_1);};})(ext_0);
- return Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_43 = arg_483(eta_0);
+ return Dom_consoleLog(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_43 = arg_483(eta_0);
 const imp$5fgen_42 = arg_485(eta_0);
 return imp$5fgen_43(imp$5fgen_42);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_44 = arg_644(eta_0);
 return arg_645(imp$5fgen_44)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_45 = arg_647(eta_0);
-return imp$5fgen_45(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), 'Done.')(ext_0);
+return imp$5fgen_45(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), 'Done.')(ext_0);
 }
 
-function Main_calculateMousePos(arg_0, arg_1, ext_0){//src/Main.idr:10:1--11:18
- const imp$5fgen_87 = Dom_getBoundingClientRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_49 = arg_483(eta_0);
+function Main_calculateMousePos(arg_0, arg_1, ext_0){//src/Main.idr:10:1--10:57
+ const imp$5fgen_87 = Dom_getBoundingClientRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_49 = arg_483(eta_0);
 const imp$5fgen_48 = arg_485(eta_0);
 return imp$5fgen_49(imp$5fgen_48);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_50 = arg_644(eta_0);
 return arg_645(imp$5fgen_50)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_51 = arg_647(eta_0);
-return imp$5fgen_51(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0)(ext_0);
- const imp$5fgen_86 = Dom_documentElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_53 = arg_483(eta_0);
+return imp$5fgen_51(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), arg_0)(ext_0);
+ const imp$5fgen_86 = Dom_documentElement(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_53 = arg_483(eta_0);
 const imp$5fgen_52 = arg_485(eta_0);
 return imp$5fgen_53(imp$5fgen_52);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_54 = arg_644(eta_0);
 return arg_645(imp$5fgen_54)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_55 = arg_647(eta_0);
-return imp$5fgen_55(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}))(ext_0);
- const imp$5fgen_85 = Dom_clientX(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_57 = arg_483(eta_0);
+return imp$5fgen_55(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}))(ext_0);
+ const imp$5fgen_85 = Dom_clientX(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_57 = arg_483(eta_0);
 const imp$5fgen_56 = arg_485(eta_0);
 return imp$5fgen_57(imp$5fgen_56);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_58 = arg_644(eta_0);
 return arg_645(imp$5fgen_58)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_59 = arg_647(eta_0);
-return imp$5fgen_59(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1)(ext_0);
- const imp$5fgen_84 = Dom_left(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_61 = arg_483(eta_0);
+return imp$5fgen_59(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), arg_1)(ext_0);
+ const imp$5fgen_84 = Dom_left(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_61 = arg_483(eta_0);
 const imp$5fgen_60 = arg_485(eta_0);
 return imp$5fgen_61(imp$5fgen_60);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_62 = arg_644(eta_0);
 return arg_645(imp$5fgen_62)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_63 = arg_647(eta_0);
-return imp$5fgen_63(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_87)(ext_0);
- const imp$5fgen_83 = Dom_scrollLeft(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_65 = arg_483(eta_0);
+return imp$5fgen_63(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_87)(ext_0);
+ const imp$5fgen_83 = Dom_scrollLeft(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_65 = arg_483(eta_0);
 const imp$5fgen_64 = arg_485(eta_0);
 return imp$5fgen_65(imp$5fgen_64);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_66 = arg_644(eta_0);
 return arg_645(imp$5fgen_66)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_67 = arg_647(eta_0);
-return imp$5fgen_67(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_86)(ext_0);
- const imp$5fgen_82 = Dom_clientY(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_69 = arg_483(eta_0);
+return imp$5fgen_67(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_86)(ext_0);
+ const imp$5fgen_82 = Dom_clientY(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_69 = arg_483(eta_0);
 const imp$5fgen_68 = arg_485(eta_0);
 return imp$5fgen_69(imp$5fgen_68);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_70 = arg_644(eta_0);
 return arg_645(imp$5fgen_70)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_71 = arg_647(eta_0);
-return imp$5fgen_71(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1)(ext_0);
- const imp$5fgen_81 = Dom_top(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_73 = arg_483(eta_0);
+return imp$5fgen_71(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), arg_1)(ext_0);
+ const imp$5fgen_81 = Dom_top(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_73 = arg_483(eta_0);
 const imp$5fgen_72 = arg_485(eta_0);
 return imp$5fgen_73(imp$5fgen_72);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_74 = arg_644(eta_0);
 return arg_645(imp$5fgen_74)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_75 = arg_647(eta_0);
-return imp$5fgen_75(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_87)(ext_0);
- const imp$5fgen_80 = Dom_scrollTop(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_77 = arg_483(eta_0);
+return imp$5fgen_75(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_87)(ext_0);
+ const imp$5fgen_80 = Dom_scrollTop(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_77 = arg_483(eta_0);
 const imp$5fgen_76 = arg_485(eta_0);
 return imp$5fgen_77(imp$5fgen_76);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_78 = arg_644(eta_0);
 return arg_645(imp$5fgen_78)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_79 = arg_647(eta_0);
-return imp$5fgen_79(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_86)(ext_0);
- return ({h:0, a1: Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_85, imp$5fgen_84), imp$5fgen_83), a2: Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_82, imp$5fgen_81), imp$5fgen_80)});
+return imp$5fgen_79(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_86)(ext_0);
+ return ({h:0, a1: Prelude$5fNum_$2d$5fNeg$5f$5fInt(Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_85, imp$5fgen_84), imp$5fgen_83), a2: Prelude$5fNum_$2d$5fNeg$5f$5fInt(Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_82, imp$5fgen_81), imp$5fgen_80)});
 }
 
-function Prelude_Basics_$7c$7c(arg_0, arg_1){//Prelude/Basics.idr:104:1--107:2
+function Prelude$5fBasics_$7c$7c(arg_0, arg_1){//Prelude/Basics.idr:104:1--106:41
  switch(arg_0){
   case 0n: {
    return 0n;
@@ -143,7 +143,7 @@ function Prelude_Basics_$7c$7c(arg_0, arg_1){//Prelude/Basics.idr:104:1--107:2
  }
 }
 
-function Prelude_Basics_not(arg_0){//Prelude/Basics.idr:92:1--95:4
+function Prelude$5fBasics_not(arg_0){//Prelude/Basics.idr:92:1--94:27
  switch(arg_0){
   case 0n: {
    return 1n;
@@ -156,7 +156,7 @@ function Prelude_Basics_not(arg_0){//Prelude/Basics.idr:92:1--95:4
  }
 }
 
-function Prelude_Basics_$26$26(arg_0, arg_1){//Prelude/Basics.idr:98:1--101:2
+function Prelude$5fBasics_$26$26(arg_0, arg_1){//Prelude/Basics.idr:98:1--100:41
  switch(arg_0){
   case 0n: {
    return arg_1();
@@ -169,7 +169,7 @@ function Prelude_Basics_$26$26(arg_0, arg_1){//Prelude/Basics.idr:98:1--101:2
  }
 }
 
-function Builtin_snd(arg_0, arg_1, arg_2){//Builtin.idr:62:1--65:4
+function Builtin_snd(arg_0, arg_1, arg_2){//Builtin.idr:62:1--64:37
  switch(arg_2.h){
   case 0: {
    return arg_2.a2;
@@ -179,11 +179,11 @@ function Builtin_snd(arg_0, arg_1, arg_2){//Builtin.idr:62:1--65:4
  }
 }
 
-function Builtin_idris$5fcrash(arg_0, ext_0){//Builtin.idr:175:1--177:12
+function Builtin_idris$5fcrash(arg_0, ext_0){//Builtin.idr:185:1--186:26
  return __esPrim_crashExp(ext_0);
 }
 
-function Builtin_fst(arg_0, arg_1, arg_2){//Builtin.idr:57:1--60:4
+function Builtin_fst(arg_0, arg_1, arg_2){//Builtin.idr:57:1--59:37
  switch(arg_2.h){
   case 0: {
    return arg_2.a1;
@@ -193,16 +193,16 @@ function Builtin_fst(arg_0, arg_1, arg_2){//Builtin.idr:57:1--60:4
  }
 }
 
-function Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:938:17--940:28
+function Prelude$5fTypes_case__case$20block$20in$20rangeFromTo_5535(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:951:17--953:28
  switch(arg_4){
   case 0n: {
-   return Prelude_Types_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+   return Prelude$5fTypes_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
  case 0: {
   return Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a5(arg_5)(arg_2);
   break; }
  default:
   throw new Error('unhandled con case on Prelude/EqOrd.idr:97:3--97:26');
-}}, Prelude_Types_countFrom(undefined, arg_3, (x) => {switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+}}, Prelude$5fTypes_countFrom(undefined, arg_3, (x) => {switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
  case 0: {
   let imp$5fgen_88;
   switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
@@ -210,7 +210,7 @@ function Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(arg_0, arg_1, 
     imp$5fgen_88 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
     break; }
    default:
-    throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+    throw new Error('unhandled con case on Prelude/Num.idr:26:1--31:23');
   }
   let imp$5fgen_89;
   switch(imp$5fgen_88.h){
@@ -234,22 +234,22 @@ function Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(arg_0, arg_1, 
  }
 }
 
-function Prelude_Types_case__rangeFromTo_5209(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:936:9--941:18
+function Prelude$5fTypes_case__rangeFromTo_5482(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:949:9--953:28
  switch(arg_4){
   case 0n: {
-   return Prelude_Types_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
+   return Prelude$5fTypes_takeUntil(undefined, (arg_5) => {switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
  case 0: {
   return Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a6(arg_5)(arg_3);
   break; }
  default:
   throw new Error('unhandled con case on Prelude/EqOrd.idr:100:3--100:26');
-}}, Prelude_Types_countFrom(undefined, arg_2, (arg_5) => {let imp$5fgen_90;
+}}, Prelude$5fTypes_countFrom(undefined, arg_2, (arg_5) => {let imp$5fgen_90;
 switch(Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
  case 0: {
   imp$5fgen_90 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
   break; }
  default:
-  throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+  throw new Error('unhandled con case on Prelude/Num.idr:26:1--31:23');
 }
 switch(imp$5fgen_90.h){
  case 0: {
@@ -259,7 +259,7 @@ switch(imp$5fgen_90.h){
     imp$5fgen_91 = Builtin_snd(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).a1;
     break; }
    default:
-    throw new Error('unhandled con case on Prelude/Num.idr:26:1--33:76');
+    throw new Error('unhandled con case on Prelude/Num.idr:26:1--31:23');
   }
   let imp$5fgen_92;
   switch(imp$5fgen_91.h){
@@ -284,27 +284,27 @@ switch(imp$5fgen_90.h){
     default:
      throw new Error('unhandled con case on Prelude/EqOrd.idr:94:3--94:25');
    }
-   return Prelude_Types_case__case$20block$20in$20rangeFromTo_5262(undefined, arg_1, arg_3, arg_2, imp$5fgen_93);
+   return Prelude$5fTypes_case__case$20block$20in$20rangeFromTo_5535(undefined, arg_1, arg_3, arg_2, imp$5fgen_93);
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
  }
 }
 
-function Prelude_Types_case__takeUntil_4755(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:890:7--892:34
+function Prelude$5fTypes_case__takeUntil_5028(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:903:7--905:34
  switch(arg_4){
   case 0n: {
    return ({h:1, a1: arg_1, a2: ({h:0})});
    break; }
   case 1n: {
-   return ({h:1, a1: arg_1, a2: Prelude_Types_takeUntil(undefined, arg_3, arg_2())});
+   return ({h:1, a1: arg_1, a2: Prelude$5fTypes_takeUntil(undefined, arg_3, arg_2())});
    break; }
   default:
-   throw new Error('unhandled const case on Prelude/Types.idr:888:19--888:23');
+   throw new Error('unhandled const case on Prelude/Types.idr:901:19--901:23');
  }
 }
 
-function Prelude_Types_rangeFromTo$5fRange$5f$5f$24a(arg_0, arg_1, arg_2, arg_3){//Prelude/Types.idr:933:1--956:1
+function Prelude$5fTypes_rangeFromTo$5fRange$5f$5f$24a(arg_0, arg_1, arg_2, arg_3){//Prelude/Types.idr:946:1--968:48
  let imp$5fgen_94;
  switch(Builtin_fst(undefined, undefined, Builtin_snd(undefined, undefined, arg_1)).h){
   case 0: {
@@ -313,23 +313,23 @@ function Prelude_Types_rangeFromTo$5fRange$5f$5f$24a(arg_0, arg_1, arg_2, arg_3)
   default:
    throw new Error('unhandled con case on Prelude/EqOrd.idr:94:3--94:25');
  }
- return Prelude_Types_case__rangeFromTo_5209(undefined, arg_1, arg_2, arg_3, imp$5fgen_94);
+ return Prelude$5fTypes_case__rangeFromTo_5482(undefined, arg_1, arg_2, arg_3, imp$5fgen_94);
 }
 
-function Prelude_Types_foldr$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:323:1--331:7
+function Prelude$5fTypes_foldr$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:336:1--342:41
  switch(arg_4.h){
   case 0: {
    return arg_3;
    break; }
   case 1: {
-   return arg_2(arg_4.a1)(Prelude_Types_foldr$5fFoldable$5f$5fList(undefined, undefined, arg_2, arg_3, arg_4.a2));
+   return arg_2(arg_4.a1)(Prelude$5fTypes_foldr$5fFoldable$5f$5fList(undefined, undefined, arg_2, arg_3, arg_4.a2));
    break; }
   default:
    throw new Error('unhandled con case on Prelude/Interfaces.idr:210:67--210:73');
  }
 }
 
-function Prelude_Types_foldl$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:323:1--331:7
+function Prelude$5fTypes_foldl$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, arg_4){//Prelude/Types.idr:336:1--342:41
  function tailRecOptimStep_0(tailRecOptimArgs_0){//:1:1--1:1
   switch(tailRecOptimArgs_0.a5.h){
    case 0: {
@@ -355,7 +355,7 @@ function Prelude_Types_foldl$5fFoldable$5f$5fList(arg_0, arg_1, arg_2, arg_3, ar
  }
 }
 
-function Prelude_Types_compare$5fOrd$5f$5fNat(arg_0, arg_1){//Prelude/Types.idr:70:1--77:7
+function Prelude$5fTypes_compare$5fOrd$5f$5fNat(arg_0, arg_1){//Prelude/Types.idr:77:1--82:36
  switch(arg_0){
   case 0n: {
    let imp$5fgen_95;
@@ -377,71 +377,71 @@ function Prelude_Types_compare$5fOrd$5f$5fNat(arg_0, arg_1){//Prelude/Types.idr:
      break; }
     default:
      const imp$5fgen_97 = (arg_1 - 1n);
-     imp$5fgen_96 = Prelude_Types_compare$5fOrd$5f$5fNat(imp$5fgen_98, imp$5fgen_97);
+     imp$5fgen_96 = Prelude$5fTypes_compare$5fOrd$5f$5fNat(imp$5fgen_98, imp$5fgen_97);
    }
    return imp$5fgen_96;
  }
 }
 
-function Prelude_Types_takeUntil(arg_0, arg_1, arg_2){//Prelude/Types.idr:887:1--889:10
+function Prelude$5fTypes_takeUntil(arg_0, arg_1, arg_2){//Prelude/Types.idr:900:1--901:46
  switch(arg_2.h){
   case 0: {
-   return Prelude_Types_case__takeUntil_4755(undefined, arg_2.a1, arg_2.a2, arg_1, arg_1(arg_2.a1));
+   return Prelude$5fTypes_case__takeUntil_5028(undefined, arg_2.a1, arg_2.a2, arg_1, arg_1(arg_2.a1));
    break; }
   default:
-   throw new Error('unhandled con case on Prelude/Types.idr:888:28--888:36');
+   throw new Error('unhandled con case on Prelude/Types.idr:901:28--901:36');
  }
 }
 
-function Prelude_Types_countFrom(arg_0, arg_1, arg_2){//Prelude/Types.idr:881:1--883:10
- return ({h:0, a1: arg_1, a2: (()=>Prelude_Types_countFrom(undefined, arg_2(arg_1), arg_2))});
+function Prelude$5fTypes_countFrom(arg_0, arg_1, arg_2){//Prelude/Types.idr:894:1--895:38
+ return ({h:0, a1: arg_1, a2: (()=>Prelude$5fTypes_countFrom(undefined, arg_2(arg_1), arg_2))});
 }
 
-function Prelude_Types_Strings_$2b$2b(arg_0, arg_1){//Prelude/Types.idr:393:3--395:4
+function Prelude$5fTypes$5fStrings_$2b$2b(arg_0, arg_1){//Prelude/Types.idr:406:3--407:52
  return (arg_0 + arg_1);
 }
 
-function Prelude_Num_case__mod_459(arg_0, arg_1, arg_2){//Prelude/Num.idr:117:9--122:8
+function Prelude$5fNum_case__mod_459(arg_0, arg_1, arg_2){//Prelude/Num.idr:117:9--118:40
  switch(arg_2){
   case 1n: {
    return ((arg_1 % arg_0) % __esPrim_int_bound_63);
    break; }
   default:
-   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in mod at Prelude/Num.idr:116:3--122:8');
+   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in mod at Prelude/Num.idr:116:3--118:40');
  }
 }
 
-function Prelude_Num_case__div_440(arg_0, arg_1, arg_2){//Prelude/Num.idr:114:9--116:6
+function Prelude$5fNum_case__div_440(arg_0, arg_1, arg_2){//Prelude/Num.idr:114:9--115:40
  switch(arg_2){
   case 1n: {
    return ((arg_1 / arg_0) % __esPrim_int_bound_63);
    break; }
   default:
-   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in div at Prelude/Num.idr:113:3--116:6');
+   return Builtin_idris$5fcrash(undefined, 'Unhandled input for Prelude.Num.case block in div at Prelude/Num.idr:113:3--115:40');
  }
 }
 
-function Prelude_Num_negate$5fNeg$5f$5fInt(arg_0){//Prelude/Num.idr:102:1--107:7
+function Prelude$5fNum_negate$5fNeg$5f$5fInt(arg_0){//Prelude/Num.idr:102:1--105:22
  return ((0n - arg_0) % __esPrim_int_bound_63);
 }
 
-function Prelude_Num_mod$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--122:8
- return Prelude_Num_case__mod_459(arg_1, arg_0, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
+function Prelude$5fNum_mod$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--118:40
+ return Prelude$5fNum_case__mod_459(arg_1, arg_0, Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
 }
 
-function Prelude_Num_div$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--122:8
- return Prelude_Num_case__div_440(arg_1, arg_0, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
+function Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_0, arg_1){//Prelude/Num.idr:111:1--118:40
+ return Prelude$5fNum_case__div_440(arg_1, arg_0, Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, (0n % __esPrim_int_bound_63)));
 }
 
-function Prelude_Num_$2d$5fNeg$5f$5fInt(ext_0, ext_1){//Prelude/Num.idr:102:1--107:7
+function Prelude$5fNum_$2d$5fNeg$5f$5fInt(ext_0, ext_1){//Prelude/Num.idr:102:1--105:22
  return ((ext_0 - ext_1) % __esPrim_int_bound_63);
 }
 
-function Prelude_Num_$2a$5fNum$5f$5fDouble(ext_0, ext_1){//Prelude/Num.idr:158:1--164:7
+function Prelude$5fNum_$2a$5fNum$5f$5fDouble(ext_0, ext_1){//Prelude/Num.idr:158:1--162:41
  return (ext_0 * ext_1);
 }
 
-function Prelude_EqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:39--139:64
+function Prelude$5fEqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:39--139:64
  switch(arg_2){
   case 0n: {
    return 1n;
@@ -454,20 +454,20 @@ function Prelude_EqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, arg_
  }
 }
 
-function Prelude_EqOrd_case__compare_1284(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:17--141:4
+function Prelude$5fEqOrd_case__compare_1284(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:139:17--139:64
  switch(arg_2){
   case 0n: {
    return 0n;
    break; }
   case 1n: {
-   return Prelude_EqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInteger(arg_1, arg_0));
+   return Prelude$5fEqOrd_case__case$20block$20in$20compare_1301(arg_0, arg_1, Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInteger(arg_1, arg_0));
    break; }
   default:
    throw new Error('unhandled const case on Prelude/EqOrd.idr:91:21--91:25');
  }
 }
 
-function Prelude_EqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:39--130:64
+function Prelude$5fEqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:39--130:64
  switch(arg_2){
   case 0n: {
    return 1n;
@@ -480,20 +480,20 @@ function Prelude_EqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, arg_
  }
 }
 
-function Prelude_EqOrd_case__compare_1170(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:17--132:4
+function Prelude$5fEqOrd_case__compare_1170(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:130:17--130:64
  switch(arg_2){
   case 0n: {
    return 0n;
    break; }
   case 1n: {
-   return Prelude_EqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, arg_0));
+   return Prelude$5fEqOrd_case__case$20block$20in$20compare_1187(arg_0, arg_1, Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_1, arg_0));
    break; }
   default:
    throw new Error('unhandled const case on Prelude/EqOrd.idr:91:21--91:25');
  }
 }
 
-function Prelude_EqOrd_case__max_1153(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_case__max_1153(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--135:43
  switch(arg_2){
   case 0n: {
    return arg_1;
@@ -506,7 +506,7 @@ function Prelude_EqOrd_case__max_1153(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:1
  }
 }
 
-function Prelude_EqOrd_case__min_1139(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_case__min_1139(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:128:1--135:43
  switch(arg_2){
   case 0n: {
    return arg_1;
@@ -519,23 +519,23 @@ function Prelude_EqOrd_case__min_1139(arg_0, arg_1, arg_2){//Prelude/EqOrd.idr:1
  }
 }
 
-function Prelude_EqOrd_min$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
- return Prelude_EqOrd_case__min_1139(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
+function Prelude$5fEqOrd_min$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
+ return Prelude$5fEqOrd_case__min_1139(arg_1, arg_0, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
 }
 
-function Prelude_EqOrd_max$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
- return Prelude_EqOrd_case__max_1153(arg_1, arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1));
+function Prelude$5fEqOrd_max$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
+ return Prelude$5fEqOrd_case__max_1153(arg_1, arg_0, Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1));
 }
 
-function Prelude_EqOrd_compare$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--146:7
- return Prelude_EqOrd_case__compare_1284(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1));
+function Prelude$5fEqOrd_compare$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--144:47
+ return Prelude$5fEqOrd_case__compare_1284(arg_1, arg_0, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1));
 }
 
-function Prelude_EqOrd_compare$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
- return Prelude_EqOrd_case__compare_1170(arg_1, arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
+function Prelude$5fEqOrd_compare$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
+ return Prelude$5fEqOrd_case__compare_1170(arg_1, arg_0, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1));
 }
 
-function Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
  switch(((arg_0 > arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -545,7 +545,7 @@ function Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:
  }
 }
 
-function Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
  switch(((arg_0 >= arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -555,7 +555,7 @@ function Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:1
  }
 }
 
-function Prelude_EqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--86:75
+function Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--84:19
  switch(arg_0){
   case 0n: {
    let imp$5fgen_99;
@@ -595,7 +595,7 @@ function Prelude_EqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.i
  }
 }
 
-function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:40:1--44:7
+function Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:40:1--42:44
  switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -605,7 +605,7 @@ function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.id
  }
 }
 
-function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--40:7
+function Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--38:40
  switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -615,7 +615,7 @@ function Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36
  }
 }
 
-function Prelude_EqOrd_$3d$3d$5fEq$5f$5fChar(arg_0, arg_1){//Prelude/EqOrd.idr:64:1--68:7
+function Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fChar(arg_0, arg_1){//Prelude/EqOrd.idr:64:1--66:41
  switch(((arg_0 === arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -625,7 +625,7 @@ function Prelude_EqOrd_$3d$3d$5fEq$5f$5fChar(arg_0, arg_1){//Prelude/EqOrd.idr:6
  }
 }
 
-function Prelude_EqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--146:7
+function Prelude$5fEqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:137:1--144:47
  switch(((arg_0 < arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -635,7 +635,7 @@ function Prelude_EqOrd_$3c$5fOrd$5f$5fInteger(arg_0, arg_1){//Prelude/EqOrd.idr:
  }
 }
 
-function Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
  switch(((arg_0 < arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -645,7 +645,7 @@ function Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:
  }
 }
 
-function Prelude_EqOrd_$3c$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--137:7
+function Prelude$5fEqOrd_$3c$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:128:1--135:43
  switch(((arg_0 <= arg_1) ? BigInt(1) : BigInt(0))){
   case 0n: {
    return 1n;
@@ -655,15 +655,15 @@ function Prelude_EqOrd_$3c$3d$5fOrd$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:1
  }
 }
 
-function Prelude_EqOrd_$2f$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--86:75
- return Prelude_Basics_not(Prelude_EqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1));
+function Prelude$5fEqOrd_$2f$3d$5fEq$5f$5fOrdering(arg_0, arg_1){//Prelude/EqOrd.idr:79:1--84:19
+ return Prelude$5fBasics_not(Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fOrdering(arg_0, arg_1));
 }
 
-function Prelude_EqOrd_$2f$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--40:7
- return Prelude_Basics_not(Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1));
+function Prelude$5fEqOrd_$2f$3d$5fEq$5f$5fInt(arg_0, arg_1){//Prelude/EqOrd.idr:36:1--38:40
+ return Prelude$5fBasics_not(Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_0, arg_1));
 }
 
-function Prelude_Interfaces_traverse$5f(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:285:1--289:10
+function Prelude$5fInterfaces_traverse$5f(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:285:1--288:69
  switch(Builtin_fst(undefined, undefined, arg_4).h){
   case 0: {
    return (arg_6) => {let imp$5fgen_102;
@@ -674,18 +674,18 @@ switch(Builtin_snd(undefined, undefined, arg_4).h){
  default:
   throw new Error('unhandled con case on Prelude/Interfaces.idr:145:3--145:18');
 }
-return Builtin_fst(undefined, undefined, arg_4).a1(undefined)(undefined)((eta_0) => {return (eta_1) => {return Prelude_Interfaces_$2a$3e(undefined, undefined, undefined, Builtin_snd(undefined, undefined, arg_4), arg_5(eta_0), eta_1);};})(imp$5fgen_102)(arg_6);};
+return Builtin_fst(undefined, undefined, arg_4).a1(undefined)(undefined)((eta_0) => {return (eta_1) => {return Prelude$5fInterfaces_$2a$3e(undefined, undefined, undefined, Builtin_snd(undefined, undefined, arg_4), arg_5(eta_0), eta_1);};})(imp$5fgen_102)(arg_6);};
    break; }
   default:
    throw new Error('unhandled con case on Prelude/Interfaces.idr:210:3--210:81');
  }
 }
 
-function Prelude_Interfaces_$3c$24$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:85:1--91:2
+function Prelude$5fInterfaces_$3c$24$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:85:1--90:51
  return arg_3(undefined)(undefined)(arg_4)(arg_5);
 }
 
-function Prelude_Interfaces_$2a$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:152:1--154:2
+function Prelude$5fInterfaces_$2a$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//Prelude/Interfaces.idr:152:1--153:42
  switch(arg_3.h){
   case 0: {
    let imp$5fgen_103;
@@ -694,7 +694,7 @@ function Prelude_Interfaces_$2a$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//P
      imp$5fgen_103 = arg_3.a1(undefined)(undefined)((eta_0) => {return (eta_1) => {return eta_1;};})(arg_4);
      break; }
     default:
-     throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--148:7');
+     throw new Error('unhandled con case on Prelude/Interfaces.idr:143:1--146:35');
    }
    return arg_3.a3(undefined)(undefined)(imp$5fgen_103)(arg_5);
    break; }
@@ -703,71 +703,71 @@ function Prelude_Interfaces_$2a$3e(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//P
  }
 }
 
-function PrimIO_case__unsafePerformIO_442(arg_0, arg_1, arg_2, arg_3){//PrimIO.idr:103:32--104:76
+function PrimIO_case__unsafePerformIO_519(arg_0, arg_1, arg_2, arg_3){//PrimIO.idr:103:32--104:75
  return PrimIO_unsafeDestroyWorld(undefined, undefined, arg_3);
 }
 
-function PrimIO_unsafePerformIO(arg_0, arg_1){//PrimIO.idr:100:1--102:16
- return PrimIO_unsafeCreateWorld(undefined, (w) => {return PrimIO_case__unsafePerformIO_442(undefined, undefined, undefined, arg_1(w));});
+function PrimIO_unsafePerformIO(arg_0, arg_1){//PrimIO.idr:100:1--101:36
+ return PrimIO_unsafeCreateWorld(undefined, (w) => {return PrimIO_case__unsafePerformIO_519(undefined, undefined, undefined, arg_1(w));});
 }
 
-function PrimIO_unsafeDestroyWorld(arg_0, arg_1, arg_2){//PrimIO.idr:97:1--98:19
+function PrimIO_unsafeDestroyWorld(arg_0, arg_1, arg_2){//PrimIO.idr:97:1--97:46
  return arg_2;
 }
 
-function PrimIO_unsafeCreateWorld(arg_0, arg_1){//PrimIO.idr:94:1--95:18
+function PrimIO_unsafeCreateWorld(arg_0, arg_1){//PrimIO.idr:94:1--94:53
  return arg_1(__esPrim_idrisworld);
 }
 
-function Prelude_Show_show$5fShow$5f$5fInt(arg_0){//Prelude/Show.idr:102:1--106:7
- return Prelude_Show_showPrec$5fShow$5f$5fInt(({h:0}), arg_0);
+function Prelude$5fShow_show$5fShow$5f$5fInt(arg_0){//Prelude/Show.idr:102:1--104:46
+ return Prelude$5fShow_showPrec$5fShow$5f$5fInt(({h:0}), arg_0);
 }
 
-function Prelude_Show_showPrec$5fShow$5f$5fInt(ext_0, ext_1){//Prelude/Show.idr:102:1--106:7
- return Prelude_Show_primNumShow(undefined, (eta_0) => {return (''+eta_0);}, ext_0, ext_1);
+function Prelude$5fShow_showPrec$5fShow$5f$5fInt(ext_0, ext_1){//Prelude/Show.idr:102:1--104:46
+ return Prelude$5fShow_primNumShow(undefined, (eta_0) => {return (''+eta_0);}, ext_0, ext_1);
 }
 
-function Prelude_Show_compare$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--41:58
+function Prelude$5fShow_compare$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--39:62
  switch(arg_0.h){
   case 4: {
    let imp$5fgen_104;
    switch(arg_1.h){
     case 4: {
-     imp$5fgen_104 = Prelude_Types_compare$5fOrd$5f$5fNat(arg_0.a1, arg_1.a1);
+     imp$5fgen_104 = Prelude$5fTypes_compare$5fOrd$5f$5fNat(arg_0.a1, arg_1.a1);
      break; }
     default:
-     imp$5fgen_104 = Prelude_EqOrd_compare$5fOrd$5f$5fInteger(Prelude_Show_precCon(arg_0), Prelude_Show_precCon(arg_1));
+     imp$5fgen_104 = Prelude$5fEqOrd_compare$5fOrd$5f$5fInteger(Prelude$5fShow_precCon(arg_0), Prelude$5fShow_precCon(arg_1));
    }
    return imp$5fgen_104;
    break; }
   default:
-   return Prelude_EqOrd_compare$5fOrd$5f$5fInteger(Prelude_Show_precCon(arg_0), Prelude_Show_precCon(arg_1));
+   return Prelude$5fEqOrd_compare$5fOrd$5f$5fInteger(Prelude$5fShow_precCon(arg_0), Prelude$5fShow_precCon(arg_1));
  }
 }
 
-function Prelude_Show_$3e$3d$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--41:58
- return Prelude_EqOrd_$2f$3d$5fEq$5f$5fOrdering(Prelude_Show_compare$5fOrd$5f$5fPrec(arg_0, arg_1), 0n);
+function Prelude$5fShow_$3e$3d$5fOrd$5f$5fPrec(arg_0, arg_1){//Prelude/Show.idr:36:1--39:62
+ return Prelude$5fEqOrd_$2f$3d$5fEq$5f$5fOrdering(Prelude$5fShow_compare$5fOrd$5f$5fPrec(arg_0, arg_1), 0n);
 }
 
-function Prelude_Show_showParens(arg_0, arg_1){//Prelude/Show.idr:64:1--68:11
+function Prelude$5fShow_showParens(arg_0, arg_1){//Prelude/Show.idr:64:1--67:46
  switch(arg_0){
   case 1n: {
    return arg_1;
    break; }
   case 0n: {
-   return Prelude_Types_Strings_$2b$2b('(', Prelude_Types_Strings_$2b$2b(arg_1, ')'));
+   return Prelude$5fTypes$5fStrings_$2b$2b('(', Prelude$5fTypes$5fStrings_$2b$2b(arg_1, ')'));
    break; }
   default:
    throw new Error('unhandled const case on Prelude/Show.idr:67:21--67:25');
  }
 }
 
-function Prelude_Show_primNumShow(arg_0, arg_1, arg_2, arg_3){//Prelude/Show.idr:99:1--100:12
+function Prelude$5fShow_primNumShow(arg_0, arg_1, arg_2, arg_3){//Prelude/Show.idr:99:1--99:51
  const imp$5fgen_105 = arg_1(arg_3);
- return Prelude_Show_showParens(Prelude_Basics_$26$26(Prelude_Show_$3e$3d$5fOrd$5f$5fPrec(arg_2, ({h:5})), (()=>Prelude_Show_firstCharIs((arg_4) => {return Prelude_EqOrd_$3d$3d$5fEq$5f$5fChar(arg_4, '-');}, imp$5fgen_105))), imp$5fgen_105);
+ return Prelude$5fShow_showParens(Prelude$5fBasics_$26$26(Prelude$5fShow_$3e$3d$5fOrd$5f$5fPrec(arg_2, ({h:5})), (()=>Prelude$5fShow_firstCharIs((arg_4) => {return Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fChar(arg_4, '-');}, imp$5fgen_105))), imp$5fgen_105);
 }
 
-function Prelude_Show_precCon(arg_0){//Prelude/Show.idr:19:1--23:8
+function Prelude$5fShow_precCon(arg_0){//Prelude/Show.idr:19:1--22:26
  switch(arg_0.h){
   case 0: {
    return 0n;
@@ -795,7 +795,7 @@ function Prelude_Show_precCon(arg_0){//Prelude/Show.idr:19:1--23:8
  }
 }
 
-function Prelude_Show_firstCharIs(arg_0, arg_1){//Prelude/Show.idr:95:1--96:12
+function Prelude$5fShow_firstCharIs(arg_0, arg_1){//Prelude/Show.idr:95:1--95:47
  switch(arg_1){
   case '': {
    return 1n;
@@ -805,15 +805,15 @@ function Prelude_Show_firstCharIs(arg_0, arg_1){//Prelude/Show.idr:95:1--96:12
  }
 }
 
-function Prelude_IO_map$5fFunctor$5f$5fIO(arg_0, arg_1, arg_2, arg_3, ext_0){//Prelude/IO.idr:15:1--19:8
+function Prelude$5fIO_map$5fFunctor$5f$5fIO(arg_0, arg_1, arg_2, arg_3, ext_0){//Prelude/IO.idr:15:1--17:46
  const imp$5fgen_106 = arg_3(ext_0);
  return arg_2(imp$5fgen_106);
 }
 
 function Graphics_drawNet(arg_0, arg_1, arg_2){//src/Graphics.idr:24:1--25:8
- return Prelude_Interfaces_traverse$5f(undefined, undefined, undefined, undefined, ({h:0, a1: ({h:0, a1: (acc) => {return (elem) => {return (func) => {return (init) => {return (input) => {return Prelude_Types_foldr$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}, a2: (elem) => {return (acc) => {return (func) => {return (init) => {return (input) => {return Prelude_Types_foldl$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}}), a2: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_108 = arg_483(eta_0);
+ return Prelude$5fInterfaces_traverse$5f(undefined, undefined, undefined, undefined, ({h:0, a1: ({h:0, a1: (acc) => {return (elem) => {return (func) => {return (init) => {return (input) => {return Prelude$5fTypes_foldr$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}, a2: (elem) => {return (acc) => {return (func) => {return (init) => {return (input) => {return Prelude$5fTypes_foldl$5fFoldable$5f$5fList(undefined, undefined, func, init, input);};};};};}}), a2: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_108 = arg_483(eta_0);
 const imp$5fgen_107 = arg_485(eta_0);
-return imp$5fgen_108(imp$5fgen_107);};};};};}})}), (i) => {return (eta_0) => {return Graphics_colorRect(arg_0, Prelude_Num_$2d$5fNeg$5f$5fInt(Prelude_Num_div$5fIntegral$5f$5fInt(arg_1, 2n), 1n), ((i * (40n % __esPrim_int_bound_63)) % __esPrim_int_bound_63), 2n, 20n, 'white', eta_0);};})(Prelude_Types_rangeFromTo$5fRange$5f$5f$24a(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return ((arg_3 + arg_4) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_183) => {return (arg_184) => {return Prelude_Num_div$5fIntegral$5f$5fInt(arg_183, arg_184);};}, a3: (arg_185) => {return (arg_186) => {return Prelude_Num_mod$5fIntegral$5f$5fInt(arg_185, arg_186);};}}), a2: ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return Prelude_EqOrd_$3d$3d$5fEq$5f$5fInt(arg_3, arg_4);};}, a2: (arg_4) => {return (arg_5) => {return Prelude_EqOrd_$2f$3d$5fEq$5f$5fInt(arg_4, arg_5);};}}), a2: (arg_369) => {return (arg_370) => {return Prelude_EqOrd_compare$5fOrd$5f$5fInt(arg_369, arg_370);};}, a3: (arg_371) => {return (arg_372) => {return Prelude_EqOrd_$3c$5fOrd$5f$5fInt(arg_371, arg_372);};}, a4: (arg_373) => {return (arg_374) => {return Prelude_EqOrd_$3e$5fOrd$5f$5fInt(arg_373, arg_374);};}, a5: (arg_375) => {return (arg_376) => {return Prelude_EqOrd_$3c$3d$5fOrd$5f$5fInt(arg_375, arg_376);};}, a6: (arg_377) => {return (arg_378) => {return Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(arg_377, arg_378);};}, a7: (arg_379) => {return (arg_380) => {return Prelude_EqOrd_max$5fOrd$5f$5fInt(arg_379, arg_380);};}, a8: (arg_381) => {return (arg_382) => {return Prelude_EqOrd_min$5fOrd$5f$5fInt(arg_381, arg_382);};}}), a2: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return ((arg_3 + arg_4) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_56) => {return Prelude_Num_negate$5fNeg$5f$5fInt(arg_56);}, a3: (arg_57) => {return (arg_58) => {return Prelude_Num_$2d$5fNeg$5f$5fInt(arg_57, arg_58);};}})})}), 0n, Prelude_Num_div$5fIntegral$5f$5fInt(arg_2, 40n)));
+return imp$5fgen_108(imp$5fgen_107);};};};};}})}), (i) => {return (eta_0) => {return Graphics_colorRect(arg_0, Prelude$5fNum_$2d$5fNeg$5f$5fInt(Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1, 2n), 1n), ((i * (40n % __esPrim_int_bound_63)) % __esPrim_int_bound_63), 2n, 20n, 'white', eta_0);};})(Prelude$5fTypes_rangeFromTo$5fRange$5f$5f$24a(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return ((arg_3 + arg_4) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_183) => {return (arg_184) => {return Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_183, arg_184);};}, a3: (arg_185) => {return (arg_186) => {return Prelude$5fNum_mod$5fIntegral$5f$5fInt(arg_185, arg_186);};}}), a2: ({h:0, a1: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return Prelude$5fEqOrd_$3d$3d$5fEq$5f$5fInt(arg_3, arg_4);};}, a2: (arg_4) => {return (arg_5) => {return Prelude$5fEqOrd_$2f$3d$5fEq$5f$5fInt(arg_4, arg_5);};}}), a2: (arg_369) => {return (arg_370) => {return Prelude$5fEqOrd_compare$5fOrd$5f$5fInt(arg_369, arg_370);};}, a3: (arg_371) => {return (arg_372) => {return Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(arg_371, arg_372);};}, a4: (arg_373) => {return (arg_374) => {return Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(arg_373, arg_374);};}, a5: (arg_375) => {return (arg_376) => {return Prelude$5fEqOrd_$3c$3d$5fOrd$5f$5fInt(arg_375, arg_376);};}, a6: (arg_377) => {return (arg_378) => {return Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(arg_377, arg_378);};}, a7: (arg_379) => {return (arg_380) => {return Prelude$5fEqOrd_max$5fOrd$5f$5fInt(arg_379, arg_380);};}, a8: (arg_381) => {return (arg_382) => {return Prelude$5fEqOrd_min$5fOrd$5f$5fInt(arg_381, arg_382);};}}), a2: ({h:0, a1: ({h:0, a1: (arg_3) => {return (arg_4) => {return ((arg_3 + arg_4) % __esPrim_int_bound_63);};}, a2: (arg_4) => {return (arg_5) => {return ((arg_4 * arg_5) % __esPrim_int_bound_63);};}, a3: (arg_6) => {return (arg_6 % __esPrim_int_bound_63);}}), a2: (arg_56) => {return Prelude$5fNum_negate$5fNeg$5f$5fInt(arg_56);}, a3: (arg_57) => {return (arg_58) => {return Prelude$5fNum_$2d$5fNeg$5f$5fInt(arg_57, arg_58);};}})})}), 0n, Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_2, 40n)));
 }
 
 function Graphics_drawBall(arg_0, arg_1){//src/Graphics.idr:29:1--32:9
@@ -823,23 +823,23 @@ function Graphics_drawBall(arg_0, arg_1){//src/Graphics.idr:29:1--32:9
    break; }
   case 1: {
    return (eta_0) => {Graphics_colorRect(arg_0, 0n, 0n, arg_1.a1, arg_1.a2, 'black', eta_0);
-Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_1) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_1);};};};};}, a2: (a) => {return (arg_482) => {return (eta_1) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_1) => {const imp$5fgen_110 = arg_483(eta_1);
+Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_1) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_1);};};};};}, a2: (a) => {return (arg_482) => {return (eta_1) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_1) => {const imp$5fgen_110 = arg_483(eta_1);
 const imp$5fgen_109 = arg_485(eta_1);
 return imp$5fgen_110(imp$5fgen_109);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_1) => {const imp$5fgen_111 = arg_644(eta_1);
 return arg_645(imp$5fgen_111)(eta_1);};};};};}, a3: (a) => {return (arg_647) => {return (eta_1) => {const imp$5fgen_112 = arg_647(eta_1);
 return imp$5fgen_112(eta_1);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, 'white')(eta_0);
-Dom_fillText(arg_0, 'Left Player Won!', ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 2n) % __esPrim_int_bound_63), eta_0);
-return Dom_fillText(arg_0, 'Click to continue', ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 5n) % __esPrim_int_bound_63), eta_0);};
+Dom_fillText(arg_0, 'Left Player Won!', ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 2n) % __esPrim_int_bound_63), eta_0);
+return Dom_fillText(arg_0, 'Click to continue', ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 5n) % __esPrim_int_bound_63), eta_0);};
    break; }
   case 2: {
    return (eta_0) => {Graphics_colorRect(arg_0, 0n, 0n, arg_1.a1, arg_1.a2, 'black', eta_0);
-Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_1) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_1);};};};};}, a2: (a) => {return (arg_482) => {return (eta_1) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_1) => {const imp$5fgen_114 = arg_483(eta_1);
+Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_1) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_1);};};};};}, a2: (a) => {return (arg_482) => {return (eta_1) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_1) => {const imp$5fgen_114 = arg_483(eta_1);
 const imp$5fgen_113 = arg_485(eta_1);
 return imp$5fgen_114(imp$5fgen_113);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_1) => {const imp$5fgen_115 = arg_644(eta_1);
 return arg_645(imp$5fgen_115)(eta_1);};};};};}, a3: (a) => {return (arg_647) => {return (eta_1) => {const imp$5fgen_116 = arg_647(eta_1);
 return imp$5fgen_116(eta_1);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, 'white')(eta_0);
-Dom_fillText(arg_0, 'Right Player Won!', ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 2n) % __esPrim_int_bound_63), eta_0);
-return Dom_fillText(arg_0, 'Click to continue', ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 5n) % __esPrim_int_bound_63), eta_0);};
+Dom_fillText(arg_0, 'Right Player Won!', ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 2n) % __esPrim_int_bound_63), eta_0);
+return Dom_fillText(arg_0, 'Click to continue', ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 16n) * 7n) % __esPrim_int_bound_63), ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n) * 5n) % __esPrim_int_bound_63), eta_0);};
    break; }
   case 3: {
    let imp$5fgen_117;
@@ -854,10 +854,10 @@ return Dom_fillText(arg_0, 'Click to continue', ((Prelude_Num_div$5fIntegral$5f$
          imp$5fgen_119 = (eta_0) => {Graphics_colorRect(arg_0, 0n, 0n, arg_1.a1, arg_1.a2, 'black', eta_0);
 Graphics_drawNet(arg_0, arg_1.a1, arg_1.a2)(eta_0);
 Graphics_colorRect(arg_0, 0n, arg_1.a3.a1, Graphics_PADDLE$5fTHICKNESS(), arg_1.a3.a2, 'white', eta_0);
-Graphics_colorRect(arg_0, Prelude_Num_$2d$5fNeg$5f$5fInt(arg_1.a1, Graphics_PADDLE$5fTHICKNESS()), arg_1.a4.a1, Graphics_PADDLE$5fTHICKNESS(), arg_1.a4.a2, 'white', eta_0);
+Graphics_colorRect(arg_0, Prelude$5fNum_$2d$5fNeg$5f$5fInt(arg_1.a1, Graphics_PADDLE$5fTHICKNESS()), arg_1.a4.a1, Graphics_PADDLE$5fTHICKNESS(), arg_1.a4.a2, 'white', eta_0);
 Graphics_colorCircle(arg_0, arg_1.a5.a1, arg_1.a5.a2, 10n, 'white', eta_0);
-Dom_fillText(arg_0, Prelude_Show_show$5fShow$5f$5fInt(arg_1.a6), Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 8n), Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n), eta_0);
-return Dom_fillText(arg_0, Prelude_Show_show$5fShow$5f$5fInt(arg_1.a7), ((Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a1, 8n) * 7n) % __esPrim_int_bound_63), Prelude_Num_div$5fIntegral$5f$5fInt(arg_1.a2, 6n), eta_0);};
+Dom_fillText(arg_0, Prelude$5fShow_show$5fShow$5f$5fInt(arg_1.a6), Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 8n), Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n), eta_0);
+return Dom_fillText(arg_0, Prelude$5fShow_show$5fShow$5f$5fInt(arg_1.a7), ((Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a1, 8n) * 7n) % __esPrim_int_bound_63), Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1.a2, 6n), eta_0);};
          break; }
         default:
          throw new Error('unhandled con case on :1:1--1:1');
@@ -880,12 +880,12 @@ return Dom_fillText(arg_0, Prelude_Show_show$5fShow$5f$5fInt(arg_1.a7), ((Prelud
 }
 
 function Graphics_colorRect(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, ext_0){//src/Graphics.idr:12:1--13:10
- Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_121 = arg_483(eta_0);
+ Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_121 = arg_483(eta_0);
 const imp$5fgen_120 = arg_485(eta_0);
 return imp$5fgen_121(imp$5fgen_120);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_122 = arg_644(eta_0);
 return arg_645(imp$5fgen_122)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_123 = arg_647(eta_0);
 return imp$5fgen_123(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_5)(ext_0);
- return Dom_fillRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_125 = arg_483(eta_0);
+ return Dom_fillRect(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_125 = arg_483(eta_0);
 const imp$5fgen_124 = arg_485(eta_0);
 return imp$5fgen_125(imp$5fgen_124);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_126 = arg_644(eta_0);
 return arg_645(imp$5fgen_126)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_127 = arg_647(eta_0);
@@ -893,22 +893,22 @@ return imp$5fgen_127(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return ar
 }
 
 function Graphics_colorCircle(arg_0, arg_1, arg_2, arg_3, arg_4, ext_0){//src/Graphics.idr:17:1--18:12
- Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_129 = arg_483(eta_0);
+ Dom_fillStyle(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_129 = arg_483(eta_0);
 const imp$5fgen_128 = arg_485(eta_0);
 return imp$5fgen_129(imp$5fgen_128);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_130 = arg_644(eta_0);
 return arg_645(imp$5fgen_130)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_131 = arg_647(eta_0);
 return imp$5fgen_131(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_4)(ext_0);
- Dom_beginPath(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_133 = arg_483(eta_0);
+ Dom_beginPath(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_133 = arg_483(eta_0);
 const imp$5fgen_132 = arg_485(eta_0);
 return imp$5fgen_133(imp$5fgen_132);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_134 = arg_644(eta_0);
 return arg_645(imp$5fgen_134)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_135 = arg_647(eta_0);
 return imp$5fgen_135(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0)(ext_0);
- Dom_arc(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_137 = arg_483(eta_0);
+ Dom_arc(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_137 = arg_483(eta_0);
 const imp$5fgen_136 = arg_485(eta_0);
 return imp$5fgen_137(imp$5fgen_136);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_138 = arg_644(eta_0);
 return arg_645(imp$5fgen_138)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_139 = arg_647(eta_0);
-return imp$5fgen_139(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_1, arg_2, arg_3, 0.0, Prelude_Num_$2a$5fNum$5f$5fDouble(Graphics_PI(), 2.0))(ext_0);
- return Dom_fill(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_141 = arg_483(eta_0);
+return imp$5fgen_139(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_0, arg_1, arg_2, arg_3, 0.0, Prelude$5fNum_$2a$5fNum$5f$5fDouble(Graphics_PI(), 2.0))(ext_0);
+ return Dom_fill(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_141 = arg_483(eta_0);
 const imp$5fgen_140 = arg_485(eta_0);
 return imp$5fgen_141(imp$5fgen_140);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_142 = arg_644(eta_0);
 return arg_645(imp$5fgen_142)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_143 = arg_647(eta_0);
@@ -1244,7 +1244,7 @@ function Dom_createElement(arg_0, arg_1, arg_2){//src/Dom.idr:17:1--19:14
   default:
    throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
  }
- return Prelude_Interfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_155, (eta_0) => {return eta_0;}, imp$5fgen_156);
+ return Prelude$5fInterfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_155, (eta_0) => {return eta_0;}, imp$5fgen_156);
 }
 
 function Dom_consoleLog(arg_0, arg_1, arg_2){//src/Dom.idr:11:1--13:11
@@ -1310,7 +1310,7 @@ function Dom_body(arg_0, arg_1){//src/Dom.idr:29:1--31:5
   default:
    throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
  }
- return Prelude_Interfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_159, (eta_0) => {return eta_0;}, imp$5fgen_160);
+ return Prelude$5fInterfaces_$3c$24$3e(undefined, undefined, undefined, imp$5fgen_159, (eta_0) => {return eta_0;}, imp$5fgen_160);
 }
 
 function Dom_beginPath(arg_0, arg_1, arg_2){//src/Dom.idr:82:1--84:10
@@ -1353,26 +1353,26 @@ function Dom_addEventListener(arg_0, arg_1, arg_2, arg_3, arg_4){//src/Dom.idr:4
  }
 }
 
-function GameLoop_registerHandler(arg_0, arg_1, arg_2, arg_3){//src/GameLoop.idr:30:3--32:18
+function GameLoop_registerHandler(arg_0, arg_1, arg_2, arg_3){//src/GameLoop.idr:30:3--31:99
  let imp$5fgen_165;
  switch(arg_1.h){
   case 0: {
    imp$5fgen_165 = arg_1.a2;
    break; }
   default:
-   throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+   throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
  }
- return Dom_addEventListener(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_162 = arg_483(eta_0);
+ return Dom_addEventListener(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_162 = arg_483(eta_0);
 const imp$5fgen_161 = arg_485(eta_0);
 return imp$5fgen_162(imp$5fgen_161);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_163 = arg_644(eta_0);
 return arg_645(imp$5fgen_163)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_164 = arg_647(eta_0);
-return imp$5fgen_164(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_2, imp$5fgen_165, (e) => {return (eta_0) => {let imp$5fgen_166;
+return imp$5fgen_164(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), arg_2, imp$5fgen_165, (e) => {return (eta_0) => {let imp$5fgen_166;
 switch(arg_1.h){
  case 0: {
   imp$5fgen_166 = arg_1.a2;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
 const imp$5fgen_170 = arg_3(imp$5fgen_166)(e)(eta_0);
 let imp$5fgen_167;
@@ -1381,7 +1381,7 @@ switch(arg_1.h){
   imp$5fgen_167 = arg_1.a5;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
 const imp$5fgen_169 = (imp$5fgen_167.value);
 let imp$5fgen_168;
@@ -1390,31 +1390,31 @@ switch(arg_1.h){
   imp$5fgen_168 = arg_1.a5;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
 return (imp$5fgen_168.value=imp$5fgen_170(imp$5fgen_169));};});
 }
 
-function GameLoop_gameLoop(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//src/GameLoop.idr:20:3--22:11
+function GameLoop_gameLoop(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5){//src/GameLoop.idr:20:3--21:111
  let imp$5fgen_180;
  switch(arg_2.h){
   case 0: {
    imp$5fgen_180 = arg_2.a4;
    break; }
   default:
-   throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+   throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
  }
- return Dom_setInterval(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_172 = arg_483(eta_0);
+ return Dom_setInterval(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_172 = arg_483(eta_0);
 const imp$5fgen_171 = arg_485(eta_0);
 return imp$5fgen_172(imp$5fgen_171);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_173 = arg_644(eta_0);
 return arg_645(imp$5fgen_173)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_174 = arg_647(eta_0);
-return imp$5fgen_174(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), (eta_0) => {let imp$5fgen_175;
+return imp$5fgen_174(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), (eta_0) => {let imp$5fgen_175;
 switch(arg_2.h){
  case 0: {
   imp$5fgen_175 = arg_2.a5;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
 const imp$5fgen_179 = (imp$5fgen_175.value);
 const imp$5fgen_178 = arg_3(imp$5fgen_179);
@@ -1424,7 +1424,7 @@ switch(arg_2.h){
   imp$5fgen_176 = arg_2.a3;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
 arg_5(imp$5fgen_176)(arg_4(imp$5fgen_178))(eta_0);
 let imp$5fgen_177;
@@ -1433,34 +1433,34 @@ switch(arg_2.h){
   imp$5fgen_177 = arg_2.a5;
   break; }
  default:
-  throw new Error('unhandled con case on src/GameLoop.idr:9:3--16:9');
+  throw new Error('unhandled con case on src/GameLoop.idr:9:3--14:32');
 }
-return (imp$5fgen_177.value=imp$5fgen_178);}, Prelude_Num_div$5fIntegral$5f$5fInt((1000n % __esPrim_int_bound_63), imp$5fgen_180));
+return (imp$5fgen_177.value=imp$5fgen_178);}, Prelude$5fNum_div$5fIntegral$5f$5fInt((1000n % __esPrim_int_bound_63), imp$5fgen_180));
 }
 
-function GameLoop_createGameContext(arg_0, arg_1, arg_2, arg_3, ext_0){//src/GameLoop.idr:16:3--18:20
- const imp$5fgen_191 = Dom_getContext(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_182 = arg_483(eta_0);
+function GameLoop_createGameContext(arg_0, arg_1, arg_2, arg_3, ext_0){//src/GameLoop.idr:16:3--17:67
+ const imp$5fgen_191 = Dom_getContext(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_182 = arg_483(eta_0);
 const imp$5fgen_181 = arg_485(eta_0);
 return imp$5fgen_182(imp$5fgen_181);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_183 = arg_644(eta_0);
 return arg_645(imp$5fgen_183)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_184 = arg_647(eta_0);
-return imp$5fgen_184(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), arg_1, '2d')(ext_0);
+return imp$5fgen_184(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), arg_1, '2d')(ext_0);
  const imp$5fgen_189 = arg_3(ext_0);
- const imp$5fgen_190 = Data_IORef_newIORef(undefined, undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_186 = arg_483(eta_0);
+ const imp$5fgen_190 = Data$5fIORef_newIORef(undefined, undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_149) => {return (eta_0) => {return Prelude$5fIO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_149, eta_0);};};};};}, a2: (a) => {return (arg_482) => {return (eta_0) => {return arg_482;};};}, a3: (b) => {return (a) => {return (arg_483) => {return (arg_485) => {return (eta_0) => {const imp$5fgen_186 = arg_483(eta_0);
 const imp$5fgen_185 = arg_485(eta_0);
 return imp$5fgen_186(imp$5fgen_185);};};};};}}), a2: (b) => {return (a) => {return (arg_644) => {return (arg_645) => {return (eta_0) => {const imp$5fgen_187 = arg_644(eta_0);
 return arg_645(imp$5fgen_187)(eta_0);};};};};}, a3: (a) => {return (arg_647) => {return (eta_0) => {const imp$5fgen_188 = arg_647(eta_0);
-return imp$5fgen_188(eta_0);};};}}), a2: (a) => {return (arg_6794) => {return arg_6794;};}}), imp$5fgen_189)(ext_0);
+return imp$5fgen_188(eta_0);};};}}), a2: (a) => {return (arg_7067) => {return arg_7067;};}}), imp$5fgen_189)(ext_0);
  return ({h:0, a1: arg_0, a2: arg_1, a3: imp$5fgen_191, a4: arg_2, a5: imp$5fgen_190});
 }
 
-function Data_IORef_newIORef(arg_0, arg_1, arg_2, arg_3){//Data/IORef.idr:15:1--17:9
+function Data$5fIORef_newIORef(arg_0, arg_1, arg_2, arg_3){//Data/IORef.idr:15:1--16:41
  let imp$5fgen_192;
  switch(arg_2.h){
   case 0: {
    imp$5fgen_192 = arg_2.a1;
    break; }
   default:
-   throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+   throw new Error('unhandled con case on Prelude/IO.idr:33:1--35:32');
  }
  switch(imp$5fgen_192.h){
   case 0: {
@@ -1478,7 +1478,7 @@ switch(arg_2.h){
   imp$5fgen_194 = arg_2.a1;
   break; }
  default:
-  throw new Error('unhandled con case on Prelude/IO.idr:33:1--37:7');
+  throw new Error('unhandled con case on Prelude/IO.idr:33:1--35:32');
 }
 let imp$5fgen_195;
 switch(imp$5fgen_194.h){
@@ -1486,7 +1486,7 @@ switch(imp$5fgen_194.h){
   imp$5fgen_195 = imp$5fgen_194.a1;
   break; }
  default:
-  throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--177:17');
+  throw new Error('unhandled con case on Prelude/Interfaces.idr:165:1--175:20');
 }
 switch(imp$5fgen_195.h){
  case 0: {
@@ -1576,7 +1576,7 @@ function GameLogic_case__case$20block$20in$20renderScene_1215(arg_0, arg_1){//sr
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:23:1--36:7');
    }
-   return GameLogic_case__case$20block$20in$20case$20block$20in$20renderScene_1229(arg_0, Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_202, GameLogic_WINNING$5fSCORE()));
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20renderScene_1229(arg_0, Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_202, GameLogic_WINNING$5fSCORE()));
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
@@ -1594,7 +1594,7 @@ function GameLogic_case__renderScene_1205(arg_0, arg_1){//src/GameLogic.idr:138:
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:23:1--36:7');
    }
-   return GameLogic_case__case$20block$20in$20renderScene_1215(arg_0, Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_203, GameLogic_WINNING$5fSCORE()));
+   return GameLogic_case__case$20block$20in$20renderScene_1215(arg_0, Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_203, GameLogic_WINNING$5fSCORE()));
    break; }
   case 1n: {
    let imp$5fgen_204;
@@ -1843,7 +1843,7 @@ function GameLogic_case__case$20block$20in$20case$20block$20in$20bounceBall_1032
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:8:1--13:7');
    }
-   return GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1076(arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_224, (0n % __esPrim_int_bound_63)));
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20case$20block$20in$20bounceBall_1076(arg_0, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_224, (0n % __esPrim_int_bound_63)));
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
@@ -1880,7 +1880,7 @@ function GameLogic_case__case$20block$20in$20bounceBall_1019(arg_0, arg_1){//src
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:23:1--36:7');
    }
-   return GameLogic_case__case$20block$20in$20case$20block$20in$20bounceBall_1032(arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_226, imp$5fgen_227));
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20bounceBall_1032(arg_0, Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_226, imp$5fgen_227));
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
@@ -1909,7 +1909,7 @@ function GameLogic_case__bounceBall_1004(arg_0, arg_1){//src/GameLogic.idr:77:8-
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:8:1--13:7');
    }
-   return GameLogic_case__case$20block$20in$20bounceBall_1019(arg_0, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_229, (0n % __esPrim_int_bound_63)));
+   return GameLogic_case__case$20block$20in$20bounceBall_1019(arg_0, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_229, (0n % __esPrim_int_bound_63)));
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
@@ -1935,7 +1935,7 @@ function GameLogic_case__case$20block$20in$20case$20block$20in$20computerMovemen
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
    }
-   return Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_231, 6n);
+   return Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_231, 6n);
    break; }
   case 1n: {
    let imp$5fgen_232;
@@ -2015,7 +2015,7 @@ function GameLogic_case__case$20block$20in$20computerMovement_747(arg_0, arg_1, 
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
    }
-   return GameLogic_case__case$20block$20in$20case$20block$20in$20computerMovement_810(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, arg_8, arg_9, arg_10, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(GameLogic_n__2119_711_cp(arg_10), ((imp$5fgen_237 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_239, 3n)) % __esPrim_int_bound_63)));
+   return GameLogic_case__case$20block$20in$20case$20block$20in$20computerMovement_810(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7, arg_8, arg_9, arg_10, Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(GameLogic_n__2119_711_cp(arg_10), ((imp$5fgen_237 + Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_239, 3n)) % __esPrim_int_bound_63)));
    break; }
   default:
    throw new Error('unhandled const case on :1:1--1:1');
@@ -2055,7 +2055,7 @@ function GameLogic_n__2119_711_cp(arg_0){//src/GameLogic.idr:72:5--73:7
   default:
    throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
  }
- return ((imp$5fgen_241 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_243, 2n)) % __esPrim_int_bound_63);
+ return ((imp$5fgen_241 + Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_243, 2n)) % __esPrim_int_bound_63);
 }
 
 function GameLogic_n__2289_865_changeYDirection(arg_0, ext_0){//src/GameLogic.idr:100:5--101:21
@@ -2064,7 +2064,7 @@ function GameLogic_n__2289_865_changeYDirection(arg_0, ext_0){//src/GameLogic.id
    let imp$5fgen_244;
    switch(ext_0.a4.h){
     case 0: {
-     imp$5fgen_244 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: ext_0.a4.a1, a2: Prelude_Num_negate$5fNeg$5f$5fInt(ext_0.a4.a2)}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
+     imp$5fgen_244 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: ext_0.a4.a1, a2: Prelude$5fNum_negate$5fNeg$5f$5fInt(ext_0.a4.a2)}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:29:15--29:23');
@@ -2082,7 +2082,7 @@ function GameLogic_n__2289_864_changeXDirection(arg_0, ext_0){//src/GameLogic.id
    let imp$5fgen_245;
    switch(ext_0.a4.h){
     case 0: {
-     imp$5fgen_245 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: Prelude_Num_negate$5fNeg$5f$5fInt(ext_0.a4.a1), a2: ext_0.a4.a2}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
+     imp$5fgen_245 = ({h:0, a1: ext_0.a1, a2: ext_0.a2, a3: ext_0.a3, a4: ({h:0, a1: Prelude$5fNum_negate$5fNeg$5f$5fInt(ext_0.a4.a1), a2: ext_0.a4.a2}), a5: ext_0.a5, a6: ext_0.a6, a7: ext_0.a7, a8: ext_0.a8, a9: ext_0.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:29:15--29:23');
@@ -2148,7 +2148,7 @@ function GameLogic_n__2289_867_changeBallVelPaddle2(arg_0, arg_1){//src/GameLogi
       default:
        throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
      }
-     imp$5fgen_246 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude_Num_div$5fIntegral$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_248, ((imp$5fgen_250 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_252, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     imp$5fgen_246 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude$5fNum_div$5fIntegral$5f$5fInt(Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_248, ((imp$5fgen_250 + Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_252, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:29:15--29:23');
@@ -2214,7 +2214,7 @@ function GameLogic_n__2289_866_changeBallVelPaddle1(arg_0, arg_1){//src/GameLogi
       default:
        throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
      }
-     imp$5fgen_253 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude_Num_div$5fIntegral$5f$5fInt(Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_255, ((imp$5fgen_257 + Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_259, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     imp$5fgen_253 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: ({h:0, a1: arg_1.a4.a1, a2: Prelude$5fNum_div$5fIntegral$5f$5fInt(Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_255, ((imp$5fgen_257 + Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_259, 2n)) % __esPrim_int_bound_63)), 3n)}), a5: arg_1.a5, a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:29:15--29:23');
@@ -2307,7 +2307,7 @@ function GameLogic_n__2289_863_ballInPaddle2(arg_0, arg_1){//src/GameLogic.idr:9
   default:
    throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
  }
- return Prelude_Basics_$26$26(Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_261, imp$5fgen_263), (()=>Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_265, ((imp$5fgen_267 + imp$5fgen_269) % __esPrim_int_bound_63))));
+ return Prelude$5fBasics_$26$26(Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_261, imp$5fgen_263), (()=>Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_265, ((imp$5fgen_267 + imp$5fgen_269) % __esPrim_int_bound_63))));
 }
 
 function GameLogic_n__2289_862_ballInPaddle1(arg_0, arg_1){//src/GameLogic.idr:89:5--90:18
@@ -2391,7 +2391,7 @@ function GameLogic_n__2289_862_ballInPaddle1(arg_0, arg_1){//src/GameLogic.idr:8
   default:
    throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
  }
- return Prelude_Basics_$26$26(Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_271, imp$5fgen_273), (()=>Prelude_EqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_275, ((imp$5fgen_277 + imp$5fgen_279) % __esPrim_int_bound_63))));
+ return Prelude$5fBasics_$26$26(Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_271, imp$5fgen_273), (()=>Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(imp$5fgen_275, ((imp$5fgen_277 + imp$5fgen_279) % __esPrim_int_bound_63))));
 }
 
 function GameLogic_setPaddle1y(arg_0, arg_1){//src/GameLogic.idr:120:1--122:12
@@ -2416,7 +2416,7 @@ function GameLogic_setPaddle1y(arg_0, arg_1){//src/GameLogic.idr:120:1--122:12
       default:
        throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
      }
-     imp$5fgen_280 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: arg_1.a4, a5: ({h:0, a1: Prelude_Num_$2d$5fNeg$5f$5fInt(arg_0, Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_282, 2n)), a2: arg_1.a5.a2}), a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
+     imp$5fgen_280 = ({h:0, a1: arg_1.a1, a2: arg_1.a2, a3: arg_1.a3, a4: arg_1.a4, a5: ({h:0, a1: Prelude$5fNum_$2d$5fNeg$5f$5fInt(arg_0, Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_282, 2n)), a2: arg_1.a5.a2}), a6: arg_1.a6, a7: arg_1.a7, a8: arg_1.a8, a9: arg_1.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:30:15--30:21');
@@ -2515,7 +2515,7 @@ function GameLogic_moveBall(arg_0){//src/GameLogic.idr:113:1--116:9
 }
 
 function GameLogic_initBall(arg_0, arg_1, ext_0){//src/GameLogic.idr:36:1--38:9
- return ({h:0, a1: arg_0, a2: arg_1, a3: ({h:0, a1: Prelude_Num_div$5fIntegral$5f$5fInt(arg_0, 2n), a2: Prelude_Num_div$5fIntegral$5f$5fInt(arg_1, 2n)}), a4: ({h:0, a1: 5n, a2: 5n}), a5: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a6: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a7: 0n, a8: 0n, a9: 1n});
+ return ({h:0, a1: arg_0, a2: arg_1, a3: ({h:0, a1: Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_0, 2n), a2: Prelude$5fNum_div$5fIntegral$5f$5fInt(arg_1, 2n)}), a4: ({h:0, a1: 5n, a2: 5n}), a5: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a6: ({h:0, a1: (250n % __esPrim_int_bound_63), a2: (100n % __esPrim_int_bound_63)}), a7: 0n, a8: 0n, a9: 1n});
 }
 
 function GameLogic_computerMovement(arg_0){//src/GameLogic.idr:64:1--65:17
@@ -2557,7 +2557,7 @@ function GameLogic_computerMovement(arg_0){//src/GameLogic.idr:64:1--65:17
       default:
        throw new Error('unhandled con case on src/GameLogic.idr:18:1--23:7');
      }
-     imp$5fgen_291 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: ({h:0, a1: GameLogic_case__case$20block$20in$20computerMovement_747(arg_0.a6.a2, arg_0.a6.a1, arg_0.a9, arg_0.a8, arg_0.a7, arg_0.a5, arg_0.a4, arg_0.a3, arg_0.a2, arg_0.a1, imp$5fgen_296, Prelude_EqOrd_$3c$5fOrd$5f$5fInt(GameLogic_n__2119_711_cp(imp$5fgen_296), Prelude_Num_$2d$5fNeg$5f$5fInt(imp$5fgen_293, Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_295, 3n)))), a2: arg_0.a6.a2}), a7: arg_0.a7, a8: arg_0.a8, a9: arg_0.a9});
+     imp$5fgen_291 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: arg_0.a3, a4: arg_0.a4, a5: arg_0.a5, a6: ({h:0, a1: GameLogic_case__case$20block$20in$20computerMovement_747(arg_0.a6.a2, arg_0.a6.a1, arg_0.a9, arg_0.a8, arg_0.a7, arg_0.a5, arg_0.a4, arg_0.a3, arg_0.a2, arg_0.a1, imp$5fgen_296, Prelude$5fEqOrd_$3c$5fOrd$5f$5fInt(GameLogic_n__2119_711_cp(imp$5fgen_296), Prelude$5fNum_$2d$5fNeg$5f$5fInt(imp$5fgen_293, Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_295, 3n)))), a2: arg_0.a6.a2}), a7: arg_0.a7, a8: arg_0.a8, a9: arg_0.a9});
      break; }
     default:
      throw new Error('unhandled con case on src/GameLogic.idr:31:15--31:21');
@@ -2594,7 +2594,7 @@ function GameLogic_bounceBall(arg_0){//src/GameLogic.idr:75:1--76:11
   default:
    throw new Error('unhandled con case on src/GameLogic.idr:23:1--36:7');
  }
- return GameLogic_case__bounceBall_1004(arg_0, Prelude_EqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_298, imp$5fgen_299));
+ return GameLogic_case__bounceBall_1004(arg_0, Prelude$5fEqOrd_$3e$5fOrd$5f$5fInt(imp$5fgen_298, imp$5fgen_299));
 }
 
 function GameLogic_ballReset(arg_0){//src/GameLogic.idr:49:1--50:10
@@ -2638,7 +2638,7 @@ function GameLogic_ballReset(arg_0){//src/GameLogic.idr:49:1--50:10
         default:
          throw new Error('unhandled con case on src/GameLogic.idr:23:1--36:7');
        }
-       imp$5fgen_301 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: ({h:0, a1: Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_302, 2n), a2: Prelude_Num_div$5fIntegral$5f$5fInt(imp$5fgen_303, 2n)}), a4: ({h:0, a1: Prelude_Num_negate$5fNeg$5f$5fInt(arg_0.a4.a1), a2: 3n}), a5: arg_0.a5, a6: arg_0.a6, a7: arg_0.a7, a8: arg_0.a8, a9: Prelude_Basics_$7c$7c(Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_304, GameLogic_WINNING$5fSCORE()), (()=>Prelude_EqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_305, GameLogic_WINNING$5fSCORE())))});
+       imp$5fgen_301 = ({h:0, a1: arg_0.a1, a2: arg_0.a2, a3: ({h:0, a1: Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_302, 2n), a2: Prelude$5fNum_div$5fIntegral$5f$5fInt(imp$5fgen_303, 2n)}), a4: ({h:0, a1: Prelude$5fNum_negate$5fNeg$5f$5fInt(arg_0.a4.a1), a2: 3n}), a5: arg_0.a5, a6: arg_0.a6, a7: arg_0.a7, a8: arg_0.a8, a9: Prelude$5fBasics_$7c$7c(Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_304, GameLogic_WINNING$5fSCORE()), (()=>Prelude$5fEqOrd_$3e$3d$5fOrd$5f$5fInt(imp$5fgen_305, GameLogic_WINNING$5fSCORE())))});
        break; }
       default:
        throw new Error('unhandled con case on src/GameLogic.idr:29:15--29:23');
